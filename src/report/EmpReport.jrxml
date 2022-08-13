@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="29283076-33e2-43ab-853e-d361b020aa67">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="65"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     employee.`id` AS employee_id,
+     employee.`name` AS employee_name,
+     employee.`gender_id` AS employee_gender_id,
+     employee.`civilstatus_id` AS employee_civilstatus_id,
+     employee.`employeecol` AS employee_employeecol,
+     employee.`address` AS employee_address,
+     employee.`dob` AS employee_dob,
+     employee.`nic` AS employee_nic,
+     employee.`mobile` AS employee_mobile,
+     employee.`land` AS employee_land,
+     employee.`email` AS employee_email,
+     employee.`designation_id` AS employee_designation_id,
+     employee.`assigned` AS employee_assigned,
+     employee.`image` AS employee_image,
+     employee.`employeestatus_id` AS employee_employeestatus_id,
+     employeestatus.`id` AS employeestatus_id,
+     employeestatus.`name` AS employeestatus_name,
+     gender.`id` AS gender_id,
+     gender.`name` AS gender_name,
+     civilstatus.`id` AS civilstatus_id,
+     civilstatus.`name` AS civilstatus_name,
+     designation.`id` AS designation_id,
+     designation.`name` AS designation_name
+FROM
+     `employeestatus` employeestatus INNER JOIN `employee` employee ON employeestatus.`id` = employee.`employeestatus_id`
+     INNER JOIN `gender` gender ON employee.`gender_id` = gender.`id`
+     INNER JOIN `civilstatus` civilstatus ON employee.`civilstatus_id` = civilstatus.`id`
+     INNER JOIN `designation` designation ON employee.`designation_id` = designation.`id`]]>
+	</queryString>
+	<field name="employee_name" class="java.lang.String"/>
+	<field name="designation_name" class="java.lang.String"/>
+	<field name="gender_name" class="java.lang.String"/>
+	<field name="employee_nic" class="java.lang.String"/>
+	<field name="employee_dob" class="java.sql.Date"/>
+	<field name="civilstatus_name" class="java.lang.String"/>
+	<field name="employee_address" class="java.lang.String"/>
+	<field name="employee_mobile" class="java.lang.String"/>
+	<field name="employee_email" class="java.lang.String"/>
+	<field name="employeestatus_name" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="64">
+			<frame>
+				<reportElement uuid="98f799e1-1c83-4c6d-a3c0-b9617c65c8bc" mode="Opaque" x="-20" y="-20" width="844" height="84" backcolor="#006699"/>
+				<staticText>
+					<reportElement uuid="23de4a70-5c9b-43f0-b915-324f0f35a68d" x="48" y="26" width="206" height="43" forecolor="#FFFFFF"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Mobile Tec]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="8ec2aded-1bb0-4576-9c94-7de350272368" x="642" y="43" width="180" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Employee Details]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="23de4a70-5c9b-43f0-b915-324f0f35a68d" x="21" y="10" width="27" height="74" forecolor="#FFFFFF"/>
+					<textElement>
+						<font fontName="Brush Script MT" size="60" isBold="true"/>
+					</textElement>
+					<text><![CDATA[i]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="7"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="40">
+			<line>
+				<reportElement uuid="85011b9f-c47b-468a-808c-f3cd5fef293f" x="-20" y="39" width="844" height="1" forecolor="#666666"/>
+			</line>
+			<staticText>
+				<reportElement uuid="3c0d2a69-e6bf-43a1-85b2-8dad04698c7e" mode="Opaque" x="0" y="0" width="72" height="39" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Employee Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="94af4fae-7d00-4e7b-9c8f-654e2ae0e0a3" mode="Opaque" x="72" y="0" width="76" height="39" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Designation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b122e06a-400f-413a-8f8b-1da122b6cabf" mode="Opaque" x="148" y="0" width="55" height="39" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gender]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dabef764-9d72-4e33-ab89-3fcfe1afbf2b" mode="Opaque" x="202" y="0" width="77" height="39" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NIC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="df4d79d9-e41a-42d9-8719-9d1448713566" mode="Opaque" x="275" y="0" width="69" height="39" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date of Birth]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="31bb8fb6-ff94-46a7-8c9a-3de102ac5013" mode="Opaque" x="344" y="0" width="66" height="39" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Civil Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8e16db69-0ac4-4da7-bf31-833a6fe94364" mode="Opaque" x="410" y="0" width="119" height="39" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="840313b9-acec-47e0-9b8d-ef032d3d4659" mode="Opaque" x="529" y="0" width="77" height="39" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mobile]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="20afdfb6-6ae6-4be0-a36b-6225313d9e12" mode="Opaque" x="605" y="0" width="142" height="39" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="50aa6938-e5f4-480a-b8d2-4b4d2d94f5a2" mode="Opaque" x="747" y="0" width="55" height="39" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Working Status]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24">
+			<line>
+				<reportElement uuid="429b6d33-dc02-46a5-941b-31511ee59446" positionType="FixRelativeToBottom" x="0" y="22" width="801" height="1"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="1a7ac34a-e90e-4892-9b98-bf3fc04d9d73" x="0" y="0" width="72" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{employee_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="24cfd2f1-7084-4821-a60a-de8ceeffa81c" x="74" y="0" width="74" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{designation_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="44de7457-eb79-4c0e-a147-ee022f16bf69" x="148" y="0" width="44" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{gender_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="814a69ba-7b16-4713-92b4-98c2dd01fa5f" x="202" y="0" width="70" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{employee_nic}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="5763708b-f4ce-4c73-aaa9-69522f9682ef" x="281" y="0" width="55" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{employee_dob}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="c9d38878-7346-49cd-aec9-b5f0836fdf3e" x="528" y="0" width="78" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{employee_mobile}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="1d875a19-ba97-4b7a-ac63-0ec0a6d1c3dc" x="747" y="0" width="55" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{employeestatus_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="e585a9aa-01f2-4872-b721-1e690db66259" x="605" y="0" width="143" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{employee_email}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="207fce8e-d5ef-452e-84d0-046f9ffbe8b2" x="410" y="0" width="109" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{employee_address}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="f987bacf-2a2c-41a0-90c2-f1575e475094" x="344" y="0" width="65" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{civilstatus_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement uuid="c2657569-c0bc-41d2-ad0f-187ff643d9f8" mode="Opaque" x="0" y="4" width="761" height="13" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="86651ec1-369b-4e4d-a122-58c9b57073bc" mode="Opaque" x="761" y="4" width="40" height="13" backcolor="#E6E6E6"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="ad8ae1d2-8134-4e24-be68-8776da4d14c3" x="0" y="4" width="100" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

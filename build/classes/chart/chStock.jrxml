@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="600" pageHeight="450" whenNoDataType="AllSectionsNoDetail" columnWidth="560" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" whenResourceMissingType="Error" uuid="bcdc9211-d9ea-4740-8220-b22eb366abb6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     item.`id` AS item_id,
+     item.`name` AS item_name,
+     item.`qty` AS item_qty
+FROM
+     `item` item]]>
+	</queryString>
+	<field name="item_id" class="java.lang.Integer"/>
+	<field name="item_name" class="java.lang.String"/>
+	<field name="item_qty" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<summary>
+		<band height="400" splitType="Stretch">
+			<pieChart>
+				<chart>
+					<reportElement x="0" y="20" width="560" height="380" uuid="7960006c-ff86-4f6d-8540-b038563105ea"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<keyExpression><![CDATA[$F{item_name}]]></keyExpression>
+					<valueExpression><![CDATA[$F{item_qty}]]></valueExpression>
+					<labelExpression><![CDATA[$F{item_qty}.toString()]]></labelExpression>
+				</pieDataset>
+				<piePlot>
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+			<staticText>
+				<reportElement x="204" y="0" width="154" height="20" uuid="34218209-362d-423c-9bd6-3c9c21afd94d"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Remaining Stock]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

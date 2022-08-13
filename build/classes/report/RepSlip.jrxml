@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="300" pageHeight="842" columnWidth="260" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a8755796-dd1f-4ac2-a3b5-b6da3a8de21c">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="RepID" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT
+     repair.`id` AS repair_id,
+     repair.`fault` AS repair_fault,
+     repair.`itemsTaken` AS repair_itemsTaken,
+     repair.`tookDate` AS repair_tookDate,
+     repair.`handedOverDate` AS repair_handedOverDate,
+     repair.`price` AS repair_price,
+     repair.`user_id` AS repair_user_id,
+     repair.`repairStatus_id` AS repair_repairStatus_id,
+     repair.`jobno` AS repair_jobno,
+     repair.`customer` AS repair_customer,
+     repair.`contactno` AS repair_contactno,
+     repair.`item` AS repair_item,
+     repair.`imeino` AS repair_imeino,
+     repair.`agreeddate` AS repair_agreeddate,
+     repair.`actualcost` AS repair_actualcost,
+     user.`id` AS user_id,
+     user.`name` AS user_name,
+     user.`password` AS user_password,
+     user.`employee_id` AS user_employee_id,
+     user.`userstatus_id` AS user_userstatus_id,
+     repairstatus.`id` AS repairstatus_id,
+     repairstatus.`name` AS repairstatus_name
+FROM
+     `user` user INNER JOIN `repair` repair ON user.`id` = repair.`user_id`
+     INNER JOIN `repairstatus` repairstatus ON repair.`repairStatus_id` = repairstatus.`id`
+WHERE repair.`id` = $P{RepID}]]>
+	</queryString>
+	<field name="repair_id" class="java.lang.Integer"/>
+	<field name="repair_fault" class="java.lang.String"/>
+	<field name="repair_itemsTaken" class="java.lang.String"/>
+	<field name="repair_tookDate" class="java.sql.Date"/>
+	<field name="repair_handedOverDate" class="java.sql.Date"/>
+	<field name="repair_price" class="java.math.BigDecimal"/>
+	<field name="repair_user_id" class="java.lang.Integer"/>
+	<field name="repair_repairStatus_id" class="java.lang.Integer"/>
+	<field name="repair_jobno" class="java.lang.String"/>
+	<field name="repair_customer" class="java.lang.String"/>
+	<field name="repair_contactno" class="java.lang.String"/>
+	<field name="repair_item" class="java.lang.String"/>
+	<field name="repair_imeino" class="java.lang.String"/>
+	<field name="repair_agreeddate" class="java.sql.Date"/>
+	<field name="repair_actualcost" class="java.math.BigDecimal"/>
+	<field name="user_id" class="java.lang.Integer"/>
+	<field name="user_name" class="java.lang.String"/>
+	<field name="user_password" class="java.lang.String"/>
+	<field name="user_employee_id" class="java.lang.Integer"/>
+	<field name="user_userstatus_id" class="java.lang.Integer"/>
+	<field name="repairstatus_id" class="java.lang.Integer"/>
+	<field name="repairstatus_name" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="56" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="90c23aa9-1909-48d2-82ec-ad52a58da956" x="3" y="42" width="257" height="12" forecolor="#000000"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[518, Elvitigala, Narahepita	Tel: 0112 369 398, 0755 020 014]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="90c23aa9-1909-48d2-82ec-ad52a58da956" x="27" y="2" width="194" height="43" forecolor="#000000"/>
+				<textElement>
+					<font size="34" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mobile Tec]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="90c23aa9-1909-48d2-82ec-ad52a58da956" x="1" y="-4" width="23" height="58" forecolor="#000000"/>
+				<textElement>
+					<font fontName="Brush Script Std" size="50" isBold="true"/>
+				</textElement>
+				<text><![CDATA[i]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="967d0a51-d7b7-4901-a02c-d5449401d1f0" x="-20" y="54" width="300" height="1" forecolor="#666666"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="269" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="a8a377fe-a151-4429-8c42-f8e5bd47089c" mode="Opaque" x="1" y="42" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4a42e0a7-c094-4fcd-8cda-b2ba30e80808" mode="Opaque" x="1" y="22" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Job Taken by]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4d7eb181-e100-43c6-9002-051c22f01ae0" mode="Opaque" x="1" y="2" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Job No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3f9b028f-22b5-4220-9afa-f1e8c0c07186" mode="Opaque" x="1" y="62" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contact No.]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="4925195a-b08b-4b16-9a77-c479d89fa900" x="101" y="2" width="100" height="20"/>
+				<textElement verticalAlignment="Top">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{repair_jobno}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="4e6d3ab4-0c44-4fc2-ab41-5f9fc10b29ed" x="101" y="22" width="100" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{user_name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="71a26fb2-78eb-4504-8c50-7e6534a8ecf5" x="101" y="42" width="100" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{repair_customer}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="a71727f3-2230-4679-974d-73d6d775744a" x="101" y="62" width="100" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{repair_contactno}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="967d0a51-d7b7-4901-a02c-d5449401d1f0" x="-20" y="84" width="300" height="1" forecolor="#666666"/>
+			</line>
+			<staticText>
+				<reportElement uuid="a8a377fe-a151-4429-8c42-f8e5bd47089c" mode="Opaque" x="1" y="146" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Return Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3f9b028f-22b5-4220-9afa-f1e8c0c07186" mode="Opaque" x="1" y="166" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fault]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4d7eb181-e100-43c6-9002-051c22f01ae0" mode="Opaque" x="1" y="87" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Item]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4a42e0a7-c094-4fcd-8cda-b2ba30e80808" mode="Opaque" x="1" y="126" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Got Date]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="f4bd69ad-690b-42e7-b856-3413f9e006f4" x="101" y="87" width="100" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{repair_item}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="3d90e980-3613-4327-bb82-c4fbb0cc9138" x="101" y="126" width="100" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{repair_tookDate}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="406d7e9b-025a-4b99-8dd2-180f12b460f7" x="101" y="146" width="100" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{repair_agreeddate}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="56c2f724-d0cc-4f5c-a03b-b82b12fcecd5" x="101" y="166" width="159" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{repair_fault}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="3f9b028f-22b5-4220-9afa-f1e8c0c07186" mode="Opaque" x="1" y="186" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Accessories Taken]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="1a1eebdb-1be4-4d3f-8171-82ba0a3f1ce5" x="101" y="186" width="159" height="33"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{repair_itemsTaken}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="967d0a51-d7b7-4901-a02c-d5449401d1f0" x="-20" y="220" width="300" height="1" forecolor="#666666"/>
+			</line>
+			<staticText>
+				<reportElement uuid="3f9b028f-22b5-4220-9afa-f1e8c0c07186" mode="Opaque" x="1" y="242" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3f9b028f-22b5-4220-9afa-f1e8c0c07186" mode="Opaque" x="1" y="222" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Repair Status]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="9c85003e-304e-4e0b-967b-4c2e874da49a" x="101" y="222" width="100" height="20"/>
+				<textElement>
+					<font size="11" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{repairstatus_name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="d6dc0557-7e30-4e7d-a61e-14b09a2225f1" x="101" y="242" width="100" height="20"/>
+				<textElement>
+					<font size="11" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{repair_price}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="4d7eb181-e100-43c6-9002-051c22f01ae0" mode="Opaque" x="1" y="107" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IMEI]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="78031a16-9960-4eed-9fc5-cdcd73730362" x="101" y="107" width="159" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{repair_imeino}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

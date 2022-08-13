@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.PrivilageController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane id="AnchorPane" prefHeight="620.0" prefWidth="1050.0" stylesheets="@../css/commonStyles.css">
+               <children>
+                  <ImageView fitHeight="620.0" fitWidth="1050.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/PrivilageBack.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="btnHome" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnHomeAP" prefHeight="26.0" prefWidth="26.0" styleClass="homeButton">
+                     <tooltip>
+                        <Tooltip text="Click here for navigate to Main Window" />
+                     </tooltip></Button>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b2c3d3" height="501.0" layoutX="535.0" layoutY="78.0" stroke="#b2c3d3" strokeType="INSIDE" width="459.0" />
+                  <Label layoutX="49.0" layoutY="84.0" text="MANAGE PRIVILEGE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="545.0" layoutY="84.0" text="SEARCH PRIVILEGE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="49.0" layoutY="116.0" text="Role">
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic></Label>
+                  <Label layoutX="49.0" layoutY="160.0" text="Module">
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic></Label>
+                  <Label layoutX="49.0" layoutY="230.0" text="Privileges">
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic>
+                  </Label>
+                  <ComboBox fx:id="cmbRole" layoutX="123.0" layoutY="113.0" onAction="#cmbRoleAP" prefHeight="25.0" prefWidth="312.0" promptText="Select a Role" styleClass="combobox" />
+                  <ComboBox fx:id="cmbModule" layoutX="123.0" layoutY="157.0" onAction="#cmbModuleAP" prefHeight="25.0" prefWidth="312.0" promptText="Select a Module" styleClass="combobox" />
+                  <CheckBox fx:id="cbxSelect" layoutX="136.0" layoutY="230.0" mnemonicParsing="false" onAction="#cbxSelectAP" text="Select" />
+                  <CheckBox fx:id="cbxInsert" layoutX="136.0" layoutY="266.0" mnemonicParsing="false" onAction="#cbxInsertAP" text="Insert" />
+                  <CheckBox fx:id="cbxUpdate" layoutX="136.0" layoutY="299.0" mnemonicParsing="false" onAction="#cbxUpdateAP" text="Update" />
+                  <CheckBox fx:id="cbxDelete" layoutX="136.0" layoutY="335.0" mnemonicParsing="false" onAction="#cbxDeleteAP" text="Delete" />
+                  <Button fx:id="btnUpdate" layoutX="119.0" layoutY="395.0" mnemonicParsing="false" onAction="#btnUpdateAP" prefHeight="30.0" prefWidth="65.0" text="UPDATE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="btnDelete" layoutX="203.0" layoutY="395.0" mnemonicParsing="false" onAction="#btnDeleteAP" prefHeight="30.0" prefWidth="65.0" text="DELETE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="btnClear" layoutX="286.0" layoutY="395.0" mnemonicParsing="false" onAction="#btnClearAP" prefHeight="30.0" prefWidth="65.0" text="CLEAR">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="btnAdd" layoutX="371.0" layoutY="395.0" mnemonicParsing="false" onAction="#btnAddAP" prefHeight="30.0" prefWidth="65.0" text="ADD">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Label layoutX="545.0" layoutY="114.0" prefHeight="25.0" text="Role" />
+                  <Label layoutX="545.0" layoutY="158.0" prefHeight="25.0" text="Module" />
+                  <ComboBox fx:id="cmbSearchRole" layoutX="612.0" layoutY="110.0" onAction="#cmbSearchRoleAP" prefHeight="25.0" prefWidth="275.0" promptText="Select a Role" styleClass="combobox" />
+                  <ComboBox fx:id="cmbSearchModule" layoutX="612.0" layoutY="154.0" onAction="#cmbSearchModuleAP" prefHeight="25.0" prefWidth="275.0" promptText="Select a Module" styleClass="combobox" />
+                  <Button fx:id="btnSearchClear" layoutX="902.0" layoutY="155.0" mnemonicParsing="false" onAction="#btnSearchClearAP" text="Search Clear" />
+                  <Pagination fx:id="pagination" layoutX="540.0" layoutY="196.0" maxPageIndicatorCount="5" prefHeight="367.0" prefWidth="448.0" />
+                  <TableView fx:id="tblPrivilage" layoutX="545.0" layoutY="199.0" onKeyReleased="#tblPrivilageKR" onMouseClicked="#tblPrivilageMC" prefHeight="316.0" prefWidth="440.0">
+                     <columns>
+                        <TableColumn fx:id="colRole" prefWidth="100.0" text="Role" />
+                        <TableColumn fx:id="colModule" prefWidth="100.0" text="Module" />
+                        <TableColumn fx:id="colSelect" prefWidth="60.0" text="Select" />
+                        <TableColumn fx:id="colInsert" prefWidth="60.0" text="Insert" />
+                        <TableColumn fx:id="colUpdate" prefWidth="60.0" text="Update" />
+                        <TableColumn fx:id="colDelete" prefWidth="60.0" text="Delete" />
+                     </columns>
+                     <tooltip>
+                        <Tooltip text="Click on the row for UPDATE or DELETE the Role" />
+                     </tooltip>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

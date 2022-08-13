@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="330.0" prefWidth="560.0" stylesheets="@../css/commonStyles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.ItemTypeController">
+   <children>
+      <ImageView fitHeight="330.0" fitWidth="560.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/ItemTypeBack.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="32.0" layoutY="81.0" text="Item Type" />
+      <TextField fx:id="txtItemType" layoutX="96.0" layoutY="77.0" onKeyReleased="#txtItemTypeKR" prefHeight="25.0" prefWidth="208.0" promptText="Enter New Item Type" styleClass="combobox">
+         <tooltip>
+            <Tooltip text="Enter new Type for inser in to Datebase" />
+         </tooltip></TextField>
+      <Button fx:id="btnAdd" layoutX="160.0" layoutY="123.0" mnemonicParsing="false" onAction="#btnAddAP" prefHeight="25.0" prefWidth="80.0" text="ADD">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnClear" layoutX="160.0" layoutY="228.0" mnemonicParsing="false" onAction="#btnClearAP" prefHeight="25.0" prefWidth="80.0" text="CLEAR">
+         <tooltip>
+            <Tooltip text="Clear the Item Type text field" />
+         </tooltip>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnUpdate" layoutX="160.0" layoutY="158.0" mnemonicParsing="false" onAction="#btnUpdateAP" prefHeight="25.0" prefWidth="80.0" text="UPDATE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnDelete" layoutX="160.0" layoutY="193.0" mnemonicParsing="false" onAction="#btnDeleteAP" prefHeight="25.0" prefWidth="80.0" text="DELETE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <ListView fx:id="lstItemType" layoutX="325.0" layoutY="76.0" onMouseClicked="#lstItemTypeMC" prefHeight="211.0" prefWidth="200.0">
+         <tooltip>
+            <Tooltip text="Click on the Type for UPDATE or DELETE" />
+         </tooltip></ListView>
+   </children>
+</AnchorPane>

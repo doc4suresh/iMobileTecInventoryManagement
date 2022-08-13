@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1050.0" stylesheets="@../css/commonStyles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.EmployeeController">
+   <center>
+      <AnchorPane prefHeight="620.0" prefWidth="1050.0" stylesheets="@../css/commonStyles.css" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="620.0" prefWidth="1050.0">
+               <children>
+                  <ImageView fitHeight="620.0" fitWidth="1050.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/EmploRegBack.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnHomeAP" prefHeight="26.0" prefWidth="26.0" styleClass="homeButton">
+                     <tooltip>
+                        <Tooltip text="Click for navigate to Main Window" />
+                     </tooltip></Button>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b2c3d3" height="526.0" layoutX="489.0" layoutY="71.0" stroke="#b2c3d3" strokeType="INSIDE" width="534.0" />
+                  <Label layoutX="496.0" layoutY="79.0" text="SEARCH EMPLOYEE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="39.0" layoutY="78.0" styleClass="formfield" text="Name">
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic></Label>
+                  <Label layoutX="39.0" layoutY="108.0" prefHeight="17.0" prefWidth="55.0" styleClass="formfield" text="Gender">
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic></Label>
+                  <Label layoutX="39.0" layoutY="139.0" styleClass="formfield" text="Date of Birth">
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic></Label>
+                  <Label layoutX="39.0" layoutY="169.0" styleClass="formfield" text="NIC No.">
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic></Label>
+                  <Label layoutX="39.0" layoutY="198.0" styleClass="formfield" text="Civilstatus">
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic></Label>
+                  <Label layoutX="39.0" layoutY="227.0" styleClass="formfield" text="Address">
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic></Label>
+                  <Label layoutX="39.0" layoutY="291.0" styleClass="formfield" text="Mobile">
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic></Label>
+                  <Label layoutX="48.0" layoutY="321.0" prefHeight="17.0" prefWidth="29.0" styleClass="formfield" text="Land" />
+                  <Label layoutX="48.0" layoutY="351.0" styleClass="formfield" text="Email" />
+                  <Label layoutX="48.0" layoutY="406.0" styleClass="formfield" text="Photo" />
+                  <Label layoutX="39.0" layoutY="474.0" styleClass="formfield" text="Designation">
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic></Label>
+                  <Label layoutX="39.0" layoutY="503.0" styleClass="formfield" text="Assigned Date">
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic></Label>
+                  <Label layoutX="39.0" layoutY="534.0" styleClass="formfield" text="Status">
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic></Label>
+                  <Label layoutX="496.0" layoutY="99.0" styleClass="searchfield" text="Search By Name" />
+                  <Label layoutX="496.0" layoutY="127.0" styleClass="searchfield" text="Search By Status" />
+                  <Label layoutX="496.0" layoutY="156.0" styleClass="searchfield" text="Search By Designation" />
+                  <TextField fx:id="txtName" layoutX="143.0" layoutY="74.0" onKeyReleased="#txtNameKR" prefHeight="25.0" prefWidth="269.0" promptText="Enter Name wihout Initials" styleClass="combobox" />
+                  <ComboBox fx:id="cmbGender" layoutX="143.0" layoutY="104.0" onAction="#cmbGenderAP" prefHeight="25.0" prefWidth="269.0" promptText="Select Gender" styleClass="combobox">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="Item 1" />
+                           <String fx:value="Item 2" />
+                           <String fx:value="Item 3" />
+                        </FXCollections>
+                     </items>
+                  </ComboBox>
+                  <DatePicker fx:id="dtpDob" layoutX="143.0" layoutY="134.0" onAction="#dtpDobAP" prefHeight="17.0" prefWidth="269.0" promptText="DD/MM/YYYY" styleClass="combobox" />
+                  <TextField fx:id="txtNic" layoutX="143.0" layoutY="164.0" onKeyReleased="#txtNicKR" prefHeight="25.0" prefWidth="269.0" promptText="Enter NIC Number Here" styleClass="combobox" />
+                  <ComboBox fx:id="cmbCivilstatus" layoutX="143.0" layoutY="194.0" onAction="#cmbCivilstatusAP" prefHeight="25.0" prefWidth="269.0" promptText="Select Civilstatus" styleClass="combobox">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="Item 1" />
+                           <String fx:value="Item 2" />
+                           <String fx:value="Item 3" />
+                        </FXCollections>
+                     </items>
+                  </ComboBox>
+                  <TextArea fx:id="txtAddress" layoutX="143.0" layoutY="224.0" onKeyReleased="#txtAddressKR" prefHeight="58.0" prefWidth="269.0" promptText="Enter Address Here" styleClass="combobox" />
+                  <TextField fx:id="txtMobile" layoutX="143.0" layoutY="285.0" onKeyReleased="#txtMobileKR" prefHeight="25.0" prefWidth="269.0" promptText="Eg: 07XXXXXXXX" styleClass="combobox" />
+                  <TextField fx:id="txtLand" layoutX="143.0" layoutY="315.0" onKeyReleased="#txtLandKR" prefHeight="25.0" prefWidth="269.0" promptText="Eg: 0XXXXXXXXX" styleClass="combobox" />
+                  <TextField fx:id="txtEmail" layoutX="143.0" layoutY="345.0" onKeyReleased="#txtEmailKR" prefHeight="25.0" prefWidth="269.0" promptText="exsampale@exsample.domain" styleClass="combobox" />
+                  <Button fx:id="btnPhotoSelect" layoutX="282.0" layoutY="396.0" mnemonicParsing="false" onAction="#btnPhotoSelectAP" prefHeight="25.0" prefWidth="130.0" text="Upload">
+                     <tooltip>
+                        <Tooltip text="Upload photo from computer" />
+                     </tooltip></Button>
+                  <ComboBox fx:id="cmbDesignation" layoutX="143.0" layoutY="469.0" onAction="#cmbDesignationAP" prefHeight="25.0" prefWidth="269.0" promptText="Select Designation" styleClass="combobox">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="Item 1" />
+                           <String fx:value="Item 2" />
+                           <String fx:value="Item 3" />
+                        </FXCollections>
+                     </items>
+                  </ComboBox>
+                  <DatePicker fx:id="dtpAssign" layoutX="143.0" layoutY="499.0" onAction="#dtpAssignAP" prefHeight="25.0" prefWidth="269.0" promptText="DD/MM/YYYY" styleClass="combobox" />
+                  <ComboBox fx:id="cmbEmployeestatus" layoutX="143.0" layoutY="529.0" onAction="#cmbEmployeestatusAP" prefHeight="25.0" prefWidth="269.0" promptText="Select Employee Status" styleClass="combobox">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="Item 1" />
+                           <String fx:value="Item 2" />
+                           <String fx:value="Item 3" />
+                        </FXCollections>
+                     </items>
+                  </ComboBox>
+                  <Button fx:id="btnAdd" layoutX="349.0" layoutY="567.0" mnemonicParsing="false" onAction="#btnAddAP" prefHeight="25.0" prefWidth="64.0" styleClass="btnoperation" text="ADD">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <ImageView fx:id="imgPhoto" fitHeight="88.0" fitWidth="77.0" layoutX="143.0" layoutY="376.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/p1.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="txtSearchName" layoutX="651.0" layoutY="95.0" onKeyReleased="#txtSearchNameKR" prefHeight="25.0" prefWidth="250.0" promptText="Enter Employee Name Here" styleClass="combobox" />
+                  <ComboBox fx:id="cmbSearchEmployeestatus" layoutX="651.0" layoutY="123.0" onAction="#cmbSearchEmployeestatusAP" prefHeight="25.0" prefWidth="250.0" promptText="Select the Employeestatus" styleClass="combobox">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="Item 1" />
+                           <String fx:value="Item 2" />
+                           <String fx:value="Item 3" />
+                        </FXCollections>
+                     </items>
+                  </ComboBox>
+                  <ComboBox fx:id="cmbSearchDesignation" layoutX="651.0" layoutY="152.0" onAction="#cmbSearchDesignationAP" prefHeight="25.0" prefWidth="250.0" promptText="Select the Designation" styleClass="combobox">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="Item 1" />
+                           <String fx:value="Item 2" />
+                           <String fx:value="Item 3" />
+                        </FXCollections>
+                     </items>
+                  </ComboBox>
+                  <Button fx:id="btnDelete" layoutX="143.0" layoutY="567.0" mnemonicParsing="false" onAction="#btnDeleteAP" prefHeight="25.0" prefWidth="64.0" styleClass="btnoperation" text="DELETE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="btnUpdate" layoutX="211.0" layoutY="567.0" mnemonicParsing="false" onAction="#btnUpdateAP" prefHeight="25.0" prefWidth="66.0" styleClass="btnoperation" text="UPDATE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="btnClear" layoutX="282.0" layoutY="567.0" mnemonicParsing="false" onAction="#btnClearAP" prefHeight="25.0" prefWidth="62.0" styleClass="btnoperation" text="CLEAR">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="btnPhotoClear" layoutX="282.0" layoutY="427.0" mnemonicParsing="false" onAction="#btnPhotoClearAP" prefHeight="25.0" prefWidth="130.0" text="Clear">
+                     <tooltip>
+                        <Tooltip text="Clear the uploaded photo" />
+                     </tooltip></Button>
+                  <Button fx:id="btnSearchClear" layoutX="928.0" layoutY="123.0" mnemonicParsing="false" onAction="#btnSearchClearAP" prefHeight="25.0" prefWidth="87.0" text="Clear Search">
+                     <tooltip>
+                        <Tooltip text="Clear the search fields" />
+                     </tooltip></Button>
+                  <Button fx:id="btnSearchLock" layoutX="928.0" layoutY="152.0" mnemonicParsing="false" onAction="#btnSearchLockAP" prefHeight="25.0" prefWidth="87.0" text="Lock Criteria">
+                     <tooltip>
+                        <Tooltip text="Lock the search field with entered value" />
+                     </tooltip></Button>
+                  <Pagination fx:id="pagination" layoutX="495.0" layoutY="187.0" maxPageIndicatorCount="5" prefHeight="409.0" prefWidth="522.0" />
+                  <TableView fx:id="tblEmployee" layoutX="497.0" layoutY="189.0" onKeyReleased="#tblEmployeeKR" onMouseClicked="#tblEmployeeMC" prefHeight="361.0" prefWidth="518.0">
+                     <columns>
+                        <TableColumn fx:id="colName" prefWidth="130.0" text="Name" />
+                        <TableColumn fx:id="colStatus" prefWidth="75.0" text="Status" />
+                        <TableColumn fx:id="colDesignation" prefWidth="94.0" text="Designation" />
+                        <TableColumn fx:id="colMobile" prefWidth="91.0" text="Mobile" />
+                        <TableColumn fx:id="colEmail" prefWidth="127.0" text="email" />
+                     </columns>
+                     <tooltip>
+                        <Tooltip text="Click on the row wich you want to UPDATE or DELETE" />
+                     </tooltip>
+                  </TableView>
+                  <Label fx:id="lblNewDesignation" layoutX="415.0" layoutY="469.0" onMouseClicked="#lblNewDesignationMC" text="+">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip text="Add new Disignation" />
+                     </tooltip>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

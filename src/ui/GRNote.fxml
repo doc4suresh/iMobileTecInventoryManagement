@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1050.0" stylesheets="@../css/commonStyles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.GRNoteController">
+   <center>
+      <AnchorPane prefHeight="620.0" prefWidth="1050.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="620.0" fitWidth="1050.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/GRNBack.png" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b2c3d3" height="256.0" layoutX="13.0" layoutY="107.0" stroke="#b2c3d3" strokeType="INSIDE" width="1021.0" />
+            <GridPane layoutX="24.0" layoutY="73.0" prefHeight="509.0" prefWidth="1001.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="98.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="202.0" minWidth="10.0" prefWidth="169.66665649414062" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="213.0" minWidth="10.0" prefWidth="120.33334350585938" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="191.66668701171875" minWidth="10.0" prefWidth="129.33331298828125" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="168.0" minWidth="10.0" prefWidth="136.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="135.0" minWidth="10.0" prefWidth="98.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="127.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="122.0" minWidth="10.0" prefWidth="115.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="122.0" text="GRN No :">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblNo" text="--" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="121.0" text="Date :" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblDate" text="--" GridPane.columnIndex="3">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="PURCHASE ORDER" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="PURCHASE ORDER ITEMS" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tblPorder" onKeyReleased="#tblPorderKR" onMouseClicked="#tblPorderMC" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="3" GridPane.rowSpan="6">
+                    <columns>
+                      <TableColumn fx:id="colNo" prefWidth="115.0" text="Order No." />
+                      <TableColumn fx:id="colDate" prefWidth="135.0" text="Date &amp; Time" />
+                    </columns>
+                     <GridPane.margin>
+                        <Insets right="20.0" />
+                     </GridPane.margin>
+                     <tooltip>
+                        <Tooltip text="Click on the Purachase Order to view the Items" />
+                     </tooltip>
+                  </TableView>
+                  <TableView fx:id="tblpoitems" onMouseClicked="#tblpoitemsMC" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.columnSpan="5" GridPane.rowIndex="2" GridPane.rowSpan="7">
+                    <columns>
+                      <TableColumn fx:id="colBrand" prefWidth="140.0" text="Brand" />
+                      <TableColumn fx:id="colPoItemName" prefWidth="228.0" text="Item Name" />
+                        <TableColumn fx:id="colPORequeseted" prefWidth="145.6666259765625" text="Requested Qty" />
+                        <TableColumn fx:id="colPoRecieved" prefWidth="114.3333740234375" text="Received Qty" />
+                    </columns>
+                     <tooltip>
+                        <Tooltip text="Click on the Item Row which you want to ADD, UPDATE or DELETE" />
+                     </tooltip>
+                  </TableView>
+                  <Label text="Supplier :" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="cmbSupplier" onAction="#cmbSupplierAP" prefWidth="150.0" promptText="Select Supplier" styleClass="combobox" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Button fx:id="btnItemAdd" mnemonicParsing="false" onAction="#btnItemAddAP" prefWidth="100.0" text="ADD ITEM" GridPane.columnIndex="7" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip text="Click here for open ITEM ADD sub form for selected Item" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="btnItemUpdate" mnemonicParsing="false" onAction="#btnItemUpdateAP" prefWidth="100.0" text="UPDATE ITEM" GridPane.columnIndex="7" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip text="Click here to open sub form for UPDATE selected Item" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="btnItemDelete" mnemonicParsing="false" onAction="#btnItemDeleteAP" prefWidth="100.0" text="DELETE ITEM" GridPane.columnIndex="7" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip text="Click here to open sub form for DELETE selected Item" />
+                     </tooltip>
+                  </Button>
+                  <TableView fx:id="tblGrnotepoitems" onMouseClicked="#tblGrnotepoitemsMC" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="5" GridPane.rowIndex="10" GridPane.rowSpan="6">
+                    <columns>
+                      <TableColumn fx:id="colGrnoteItemName" prefWidth="188.0" text="Item Name" />
+                      <TableColumn fx:id="colRecived" prefWidth="100.0" text="Received Qty" />
+                        <TableColumn fx:id="colPPrice" prefWidth="130.0" text="Purchase Price" />
+                        <TableColumn fx:id="colSPrice" prefWidth="120.0" text="Sell Price" />
+                        <TableColumn fx:id="colLineTotal" prefWidth="122.0" text="Line Total" />
+                    </columns>
+                  </TableView>
+                  <Label text="Total Discount" GridPane.columnIndex="5" GridPane.rowIndex="10">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Precentage" GridPane.columnIndex="5" GridPane.rowIndex="11">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Value" GridPane.columnIndex="5" GridPane.rowIndex="12">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="txtTotalDiscountPercentage" alignment="CENTER_RIGHT" onKeyReleased="#txtTotalDiscountPercentageKR" prefHeight="25.0" prefWidth="112.0" promptText="00" styleClass="combobox" GridPane.columnIndex="6" GridPane.rowIndex="11">
+                     <GridPane.margin>
+                        <Insets right="20.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="txtTotalDiscountValue" alignment="CENTER_RIGHT" onKeyReleased="#txtTotalDiscountValueKR" promptText="00.00" styleClass="combobox" GridPane.columnIndex="6" GridPane.rowIndex="12">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Gross Amount:" GridPane.columnIndex="5" GridPane.rowIndex="14">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Net Amount   :" GridPane.columnIndex="5" GridPane.rowIndex="15">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblGrossAmount" text="00.00" GridPane.columnIndex="6" GridPane.rowIndex="14">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblNetAmount" text="00.00" GridPane.columnIndex="6" GridPane.rowIndex="15">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#btnAddAP" prefWidth="100.0" text="SAVE" GridPane.columnIndex="7" GridPane.rowIndex="11">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#btnUpdateAP" prefWidth="100.0" text="UPDATE" GridPane.columnIndex="7" GridPane.rowIndex="12">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnClear" mnemonicParsing="false" onAction="#btnClearAP" prefWidth="100.0" text="CLEAR" GridPane.columnIndex="7" GridPane.rowIndex="13">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#btnSearchAP" prefWidth="100.0" text="SEARCH" GridPane.columnIndex="7" GridPane.rowIndex="14">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip text="Click for view prepared GRNs" />
+                     </tooltip>
+                  </Button>
+                  <Label text="Rs." GridPane.columnIndex="6" GridPane.rowIndex="12">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="\%" GridPane.columnIndex="6" GridPane.rowIndex="11">
+                     <GridPane.margin>
+                        <Insets left="115.0" />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+            </GridPane>
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnHomeAP" prefHeight="26.0" prefWidth="26.0" styleClass="homeButton">
+               <tooltip>
+                  <Tooltip text="Click for navigate to Main Window" />
+               </tooltip></Button>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,21 @@
+
+.combobox  {
+    -fx-background-color: #FFF;
+    -fx-border-color: #424343;
+}
+
+.button {
+    -fx-background-color: #FFF;
+    -fx-text-fill: #424343;
+}
+
+.button:hover {
+    -fx-scale-x:1;
+    -fx-scale-y:1;
+    -fx-background-color: #c3c9c9;
+    -fx-text-fill: #424343;
+}
+
+.label {
+    -fx-text-fill: #424343;
+}

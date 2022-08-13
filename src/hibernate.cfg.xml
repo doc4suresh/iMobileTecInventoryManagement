@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/imobiletecv4db?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">6395</property>
+    <mapping class="entity.Brand"/>
+    <mapping class="entity.Civilstatus"/>
+    <mapping class="entity.Designation"/>
+    <mapping class="entity.Employee"/>
+    <mapping class="entity.Employeestatus"/>
+    <mapping class="entity.Gender"/>
+    <mapping class="entity.Grnote"/>
+    <mapping class="entity.Grnotepoitem"/>
+    <mapping class="entity.Grnotestatus"/>
+    <mapping class="entity.Invoice"/>
+    <mapping class="entity.Invoiceitem"/>
+    <mapping class="entity.Item"/>
+    <mapping class="entity.Itemstatus"/>
+    <mapping class="entity.Itemtype"/>
+    <mapping class="entity.Module"/>
+    <mapping class="entity.Poitem"/>
+    <mapping class="entity.Porder"/>
+    <mapping class="entity.Postatus"/>
+    <mapping class="entity.Privilage"/>
+    <mapping class="entity.Repair"/>
+    <mapping class="entity.Repairstatus"/>
+    <mapping class="entity.Role"/>
+    <mapping class="entity.Supplier"/>
+    <mapping class="entity.User"/>
+    <mapping class="entity.Userstatus"/>
+    <mapping class="entity.Warrenty"/>
+    <mapping class="entity.Faults1"/>
+    <mapping class="entity.Faults2"/>
+    <mapping class="entity.Rtnsendto"/>
+  </session-factory>
+</hibernate-configuration>

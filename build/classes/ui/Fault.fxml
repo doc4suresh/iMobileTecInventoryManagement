@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="560.0" stylesheets="@../css/commonStyles.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.FaultController">
+   <children>
+      <ImageView fitHeight="330.0" fitWidth="560.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/FaultsBack.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="43.0" layoutY="99.0" text="Fault" />
+      <TextField fx:id="txtFault" layoutX="90.0" layoutY="96.0" onKeyReleased="#txtFaultKR" prefHeight="25.0" prefWidth="208.0" promptText="Enter New Fault" styleClass="combobox" />
+      <Button fx:id="btnAdd" layoutX="154.0" layoutY="142.0" mnemonicParsing="false" onAction="#btnAddAP" prefHeight="25.0" prefWidth="80.0" text="ADD">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnUpdate" layoutX="154.0" layoutY="178.0" mnemonicParsing="false" onAction="#btnUpdateAP" prefHeight="25.0" prefWidth="80.0" text="UPDATE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnDelete" layoutX="154.0" layoutY="213.0" mnemonicParsing="false" onAction="#btnDeleteAP" prefHeight="25.0" prefWidth="80.0" text="DELETE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnClear" layoutX="154.0" layoutY="248.0" mnemonicParsing="false" onAction="#btnClearAP" prefHeight="25.0" prefWidth="80.0" text="CLEAR">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <tooltip>
+            <Tooltip text="Clear the disignation text field" />
+         </tooltip>
+      </Button>
+      <ListView fx:id="lstFault" layoutX="319.0" layoutY="82.0" onMouseClicked="#lstFaultMC" prefHeight="211.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>

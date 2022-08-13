@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="560" pageHeight="450" whenNoDataType="AllSectionsNoDetail" columnWidth="520" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e91e5929-4061-43d9-881a-17b0fb4a65df">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fromDate" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="toDate" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     porder.`id` AS porder_id,
+     porder.`no` AS porder_no,
+     porder.`datetime` AS porder_datetime,
+     porder.`total` AS porder_total,
+     porder.`user_employee_id` AS porder_user_employee_id,
+     porder.`supplier_id` AS porder_supplier_id,
+     porder.`postatus_id` AS porder_postatus_id,
+     supplier.`id` AS supplier_id,
+     supplier.`company` AS supplier_company
+FROM
+     `supplier` supplier INNER JOIN `porder` porder ON supplier.`id` = porder.`supplier_id`
+WHERE porder.`datetime` BETWEEN $P{fromDate} AND $P{toDate}]]>
+	</queryString>
+	<field name="porder_id" class="java.lang.Integer"/>
+	<field name="porder_no" class="java.lang.String"/>
+	<field name="porder_datetime" class="java.sql.Timestamp"/>
+	<field name="porder_total" class="java.math.BigDecimal"/>
+	<field name="porder_user_employee_id" class="java.lang.Integer"/>
+	<field name="porder_supplier_id" class="java.lang.Integer"/>
+	<field name="porder_postatus_id" class="java.lang.Integer"/>
+	<field name="supplier_id" class="java.lang.Integer"/>
+	<field name="supplier_company" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<summary>
+		<band height="400" splitType="Stretch">
+			<pieChart>
+				<chart>
+					<reportElement x="17" y="12" width="488" height="365" uuid="894bf4c3-aed6-457f-b4e1-b94789844d1c"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<keyExpression><![CDATA[$F{supplier_company}]]></keyExpression>
+					<valueExpression><![CDATA[$F{porder_total}]]></valueExpression>
+					<labelExpression><![CDATA[$F{porder_total}.toString()]]></labelExpression>
+				</pieDataset>
+				<piePlot>
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+		</band>
+	</summary>
+</jasperReport>

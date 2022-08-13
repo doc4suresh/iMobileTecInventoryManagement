@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="40" bottomMargin="40" uuid="0a880c74-1fb3-4afe-a017-d9c9a698b383">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="91"/>
+	<property name="ireport.y" value="301"/>
+	<parameter name="poID" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT
+     porder.`id` AS porder_id,
+     porder.`no` AS porder_no,
+     porder.`datetime` AS porder_datetime,
+     porder.`total` AS porder_total,
+     porder.`user_employee_id` AS porder_user_employee_id,
+     porder.`supplier_id` AS porder_supplier_id,
+     porder.`postatus_id` AS porder_postatus_id,
+     poitem.`id` AS poitem_id,
+     poitem.`porder_id` AS poitem_porder_id,
+     poitem.`item_id` AS poitem_item_id,
+     poitem.`qtyrequested` AS poitem_qtyrequested,
+     poitem.`qtyrecieved` AS poitem_qtyrecieved,
+     poitem.`linetotal` AS poitem_linetotal,
+     poitem.`pPrice` AS poitem_pPrice,
+     item.`id` AS item_id,
+     item.`itemtype_id` AS item_itemtype_id,
+     item.`brand_id` AS item_brand_id,
+     item.`name` AS item_name,
+     item.`pprice` AS item_pprice,
+     item.`sprice` AS item_sprice,
+     item.`qty` AS item_qty,
+     item.`rop` AS item_rop,
+     item.`itemstatus_id` AS item_itemstatus_id,
+     item.`supplier_id` AS item_supplier_id,
+     brand.`id` AS brand_id,
+     brand.`name` AS brand_name,
+     supplier.`id` AS supplier_id,
+     supplier.`company` AS supplier_company,
+     supplier.`contactperson` AS supplier_contactperson,
+     supplier.`address` AS supplier_address,
+     supplier.`landphone` AS supplier_landphone,
+     supplier.`mobilephone` AS supplier_mobilephone,
+     supplier.`email` AS supplier_email
+FROM
+     `porder` porder INNER JOIN `poitem` poitem ON porder.`id` = poitem.`porder_id`
+     INNER JOIN `item` item ON poitem.`item_id` = item.`id`
+     INNER JOIN `brand` brand ON item.`brand_id` = brand.`id`
+     INNER JOIN `supplier` supplier ON item.`supplier_id` = supplier.`id`
+     AND supplier.`id` = porder.`supplier_id`
+WHERE porder.`id` = $P{poID}]]>
+	</queryString>
+	<field name="porder_id" class="java.lang.Integer"/>
+	<field name="porder_no" class="java.lang.String"/>
+	<field name="porder_datetime" class="java.sql.Timestamp"/>
+	<field name="porder_total" class="java.math.BigDecimal"/>
+	<field name="porder_user_employee_id" class="java.lang.Integer"/>
+	<field name="porder_supplier_id" class="java.lang.Integer"/>
+	<field name="porder_postatus_id" class="java.lang.Integer"/>
+	<field name="poitem_id" class="java.lang.Integer"/>
+	<field name="poitem_porder_id" class="java.lang.Integer"/>
+	<field name="poitem_item_id" class="java.lang.Integer"/>
+	<field name="poitem_qtyrequested" class="java.lang.Integer"/>
+	<field name="poitem_qtyrecieved" class="java.lang.Integer"/>
+	<field name="poitem_linetotal" class="java.math.BigDecimal"/>
+	<field name="poitem_pPrice" class="java.math.BigDecimal"/>
+	<field name="item_id" class="java.lang.Integer"/>
+	<field name="item_itemtype_id" class="java.lang.Integer"/>
+	<field name="item_brand_id" class="java.lang.Integer"/>
+	<field name="item_name" class="java.lang.String"/>
+	<field name="item_pprice" class="java.math.BigDecimal"/>
+	<field name="item_sprice" class="java.math.BigDecimal"/>
+	<field name="item_qty" class="java.lang.Integer"/>
+	<field name="item_rop" class="java.lang.Integer"/>
+	<field name="item_itemstatus_id" class="java.lang.Integer"/>
+	<field name="item_supplier_id" class="java.lang.Integer"/>
+	<field name="brand_id" class="java.lang.Integer"/>
+	<field name="brand_name" class="java.lang.String"/>
+	<field name="supplier_id" class="java.lang.Integer"/>
+	<field name="supplier_company" class="java.lang.String"/>
+	<field name="supplier_contactperson" class="java.lang.String"/>
+	<field name="supplier_address" class="java.lang.String"/>
+	<field name="supplier_landphone" class="java.lang.String"/>
+	<field name="supplier_mobilephone" class="java.lang.String"/>
+	<field name="supplier_email" class="java.lang.String"/>
+	<variable name="Total" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{poitem_linetotal}]]></variableExpression>
+	</variable>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="93">
+			<staticText>
+				<reportElement uuid="176c6b7e-e378-40e8-8231-e716fbd115ea" x="14" y="2" width="85" height="25" forecolor="#000000"/>
+				<textElement>
+					<font fontName="SansSerif" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Mobile Tec]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="176c6b7e-e378-40e8-8231-e716fbd115ea" x="2" y="-3" width="16" height="37" forecolor="#000000"/>
+				<textElement>
+					<font fontName="Brush Script Std" size="26" isBold="false"/>
+				</textElement>
+				<text><![CDATA[i]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0067e2c9-8b9a-45b1-bfd9-0c7e59db6a06" x="276" y="2" width="239" height="32" forecolor="#6666FF"/>
+				<textElement textAlignment="Right">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PURCHASE ORDER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f86450ca-7b86-447e-bd78-44cce514a237" x="2" y="26" width="120" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[518, Elvitigala Mawatha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="94a9274a-ebe1-4d2b-aa2b-c04c431825d0" x="2" y="39" width="100" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Narahenpita]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d1e983c9-f540-4e4f-a712-08f6c01c9e74" x="2" y="56" width="120" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Phone : 0112 369 398]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0bf32d45-709d-443f-8ad4-853ceb910e2b" x="2" y="69" width="120" height="18"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Mobile : 0755 020 014]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="959a3307-af45-4a57-9cd8-cd21522fec54" x="404" y="37" width="110" height="20"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="4a3ec6a5-0fca-4726-a921-b702bfa826c8" mode="Transparent" x="411" y="37" width="99" height="20" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{porder_datetime}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="959a3307-af45-4a57-9cd8-cd21522fec54" x="404" y="64" width="110" height="20"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="e8e07b9b-0132-4f12-bad8-049dddaec027" x="404" y="64" width="106" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{porder_no}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="246f4187-4664-47ae-918c-2efe74cbcd15" x="333" y="37" width="71" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Date & Time]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ef14b974-4826-496a-8826-52e3cd5b5794" x="333" y="64" width="71" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[PO #]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="167">
+			<staticText>
+				<reportElement uuid="ade71942-23d5-4395-a249-a35c59b50feb" mode="Opaque" x="1" y="11" width="182" height="21" forecolor="#FFFFFF" backcolor="#006699"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUPPLIER]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="d139a433-c6bb-4d41-98ec-18958101317c" x="2" y="55" width="181" height="20"/>
+				<textElement verticalAlignment="Top">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{supplier_company}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="48beb140-7a74-4d92-9d01-da3730cafb30" x="2" y="39" width="181" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{supplier_contactperson}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="96a99c37-e2e6-43a4-91f4-f5a553487f1c" x="2" y="72" width="110" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{supplier_address}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="d1e983c9-f540-4e4f-a712-08f6c01c9e74" x="2" y="116" width="40" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Phone :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0bf32d45-709d-443f-8ad4-853ceb910e2b" x="2" y="133" width="40" height="18"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Mobile :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="499307ed-f307-423f-8bd9-a6a2fb07c2ab" x="42" y="116" width="124" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{supplier_landphone}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="79617ad6-5a28-46f4-9020-75eaefc60f6b" x="42" y="133" width="124" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{supplier_mobilephone}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement uuid="59e868ae-3f6b-4d5e-a50e-d5be38689b79" x="0" y="20" width="515" height="1" forecolor="#666666"/>
+			</line>
+			<staticText>
+				<reportElement uuid="44cf05f3-bafc-4ef9-ab47-9926d222697f" mode="Opaque" x="0" y="0" width="147" height="20" forecolor="#FFFFFF" backcolor="#006699"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BRAND]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="efce0ed1-1642-4b04-9217-222d83babd70" mode="Opaque" x="147" y="0" width="147" height="20" forecolor="#FFFFFF" backcolor="#006699"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ITEM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1ad087aa-b9f8-4995-887c-ac6ab9f7564d" mode="Opaque" x="294" y="0" width="54" height="20" forecolor="#FFFFFF" backcolor="#006699"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QTY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3214c96c-2633-4650-acd0-e432b8334ac0" mode="Opaque" x="348" y="0" width="83" height="20" forecolor="#FFFFFF" backcolor="#006699"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UNIT PRICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7cb13e66-a8ad-4245-877b-ef7d80a1c615" mode="Opaque" x="431" y="0" width="84" height="20" forecolor="#FFFFFF" backcolor="#006699"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement uuid="2221a3fa-181b-40f5-9074-274555e9e52a" positionType="FixRelativeToBottom" x="0" y="19" width="514" height="1" forecolor="#CCCCFF"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="0afd95eb-4b15-469a-9c82-9c7dd34aee9c" x="2" y="0" width="145" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{brand_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="bfbab8b1-ffb7-4ff0-8326-b09bf2565052" x="147" y="0" width="147" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="61ff73d0-a21e-40f3-bbd3-d7fed908fe24" x="294" y="0" width="54" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{poitem_qtyrequested}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;(-#,##0.00)" isBlankWhenNull="true">
+				<reportElement uuid="afe640ff-7983-42df-bc71-d8d4e6e3a02b" x="348" y="0" width="83" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{poitem_pPrice}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;(-#,##0.00)" isBlankWhenNull="true">
+				<reportElement uuid="89bb53e6-d333-4caf-b2e6-db95242b134f" x="431" y="0" width="79" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{poitem_linetotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement uuid="46726828-0ba7-43b3-9f78-ff7011f73b7e" mode="Opaque" x="0" y="4" width="514" height="13" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["i Mobile Tec"]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="813d5779-92b0-483b-a815-ead76f0e5897" x="0" y="4" width="100" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="32">
+			<textField pattern="#,##0.00;(-#,##0.00)" isBlankWhenNull="true">
+				<reportElement uuid="20b45f15-7fcd-4542-aa94-a0d30da2a508" x="414" y="0" width="96" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{Total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="30098070-9f28-4607-86ec-ad59c503c325" x="368" y="0" width="46" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="10e24313-02f1-4ccd-9c4d-065795570d6e" x="368" y="20" width="147" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="cf53d509-af38-499e-aa6a-34480aac9d16" x="368" y="22" width="147" height="1"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

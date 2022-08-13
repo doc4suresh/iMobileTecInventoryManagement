@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1050.0" stylesheets="@../css/commonStyles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.PurchaseOrderUIController">
+   <center>
+      <AnchorPane prefHeight="620.0" prefWidth="1050.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="620.0" fitWidth="1050.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/PorderBack.png" />
+               </image>
+            </ImageView>
+            <GridPane layoutX="57.0" layoutY="96.0" prefHeight="480.0" prefWidth="955.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="63.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="183.0" minWidth="10.0" prefWidth="183.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="63.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="108.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="0.0" prefWidth="0.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.0" minWidth="85.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Supplier :" />
+                  <Label text="Item Type :" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="cmbSupplier" onAction="#cmbSupplierAP" prefWidth="160.0" promptText="Select Supplier" styleClass="combobox" GridPane.columnIndex="1" />
+                  <ComboBox fx:id="cmbItemType" onAction="#cmbItemTypeAP" prefWidth="160.0" promptText="Select Item Type" styleClass="combobox" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TableView fx:id="tblItem" onMouseClicked="#tblItemMC" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="4" GridPane.rowIndex="2" GridPane.rowSpan="11">
+                    <columns>
+                        <TableColumn fx:id="colBrand" prefWidth="111.0" text="Brand" />
+                      <TableColumn fx:id="colItemName" prefWidth="168.0" text="Item Name" />
+                      <TableColumn fx:id="colPrice" prefWidth="107.0" text="Purchase Price" />
+                        <TableColumn fx:id="colQtyInHand" prefWidth="83.0" text="Qty in Hand" />
+                    </columns>
+                     <GridPane.margin>
+                        <Insets top="10.0" />
+                     </GridPane.margin>
+                     <tooltip>
+                        <Tooltip text="Click on the item for ADD to Purchase Order" />
+                     </tooltip>
+                  </TableView>
+                  <Label text="Telephone :" GridPane.columnIndex="2" />
+                  <Label text="Email :" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label fx:id="lblTelephone" text="--" GridPane.columnIndex="3" />
+                  <Label fx:id="lblEmail" text="--" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="4" GridPane.rowIndex="15">
+                     <children>
+                        <Button fx:id="btnAddItem" mnemonicParsing="false" onAction="#btnAddItemAP" prefHeight="30.0" prefWidth="60.0" text="ADD">
+                           <HBox.margin>
+                              <Insets left="110.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnItemUpdate" mnemonicParsing="false" onAction="#btnItemUpdateAP" prefHeight="30.0" prefWidth="66.0" text="UPDATE">
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnItemDelete" mnemonicParsing="false" onAction="#btnItemDeleteAP" prefHeight="30.0" prefWidth="60.0" text="DELETE">
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Label text="Quantity :" GridPane.rowIndex="13">
+                     <GridPane.margin>
+                        <Insets top="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="txtQuantity" onKeyPressed="#txtQuantityKR" promptText="Add Quantity" styleClass="combobox" GridPane.columnIndex="1" GridPane.rowIndex="13">
+                     <GridPane.margin>
+                        <Insets right="30.0" top="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="PO No :" GridPane.columnIndex="7">
+                     <GridPane.margin>
+                        <Insets left="60.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Date :" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="60.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="lblNo" text="--" GridPane.columnIndex="8" />
+                  <Label fx:id="lblDate" text="--" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+                  <TableView fx:id="tblPOItem" onMouseClicked="#tblPOItemMC" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.columnSpan="4" GridPane.rowIndex="2" GridPane.rowSpan="11">
+                    <columns>
+                      <TableColumn fx:id="colPOBrand" prefWidth="120.0" text="Brand" />
+                      <TableColumn fx:id="colPOItemName" prefWidth="123.0" text="Item Name" />
+                        <TableColumn fx:id="colQuantity" prefWidth="98.0" text="Qty" />
+                        <TableColumn fx:id="colLineTotal" prefWidth="106.0" text="Line Total" />
+                    </columns>
+                     <GridPane.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </GridPane.margin>
+                     <tooltip>
+                        <Tooltip text="Click on the Item for UPDATE or DELETE" />
+                     </tooltip>
+                  </TableView>
+                  <Label text="Expected Total :" GridPane.columnIndex="5" GridPane.rowIndex="13" GridPane.rowSpan="2">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.columnSpan="4" GridPane.rowIndex="15">
+                     <children>
+                        <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#btnAddAP" prefHeight="30.0" prefWidth="90.0" text="SAVA">
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#btnUpdateAP" prefHeight="30.0" prefWidth="90.0" text="UPDATE">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnClear" mnemonicParsing="false" onAction="#btnClearAP" prefHeight="30.0" prefWidth="90.0" text="CLEAR">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#btnSearchAP" prefHeight="30.0" prefWidth="90.0" text="SEARCH">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Click for veiw prepared Purchase Orders" />
+                           </tooltip>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Label fx:id="lblTotal" text="0.00" GridPane.columnIndex="6" GridPane.rowIndex="13" GridPane.rowSpan="2">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+               </children>
+            </GridPane>
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnHomeAP" prefHeight="26.0" prefWidth="26.0" styleClass="homeButton">
+               <tooltip>
+                  <Tooltip text="Click here for navigate to Main Window" />
+               </tooltip></Button>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

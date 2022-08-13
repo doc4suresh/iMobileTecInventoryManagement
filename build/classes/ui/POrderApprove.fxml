@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="620.0" prefWidth="1050.0" stylesheets="@../css/commonStyles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.POrderApproveController">
+   <children>
+      <ImageView fitHeight="620.0" fitWidth="1050.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/PorderBack.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b2c3d3" height="527.0" layoutX="525.0" layoutY="65.0" stroke="#b2c3d3" strokeType="INSIDE" width="518.0" />
+      <TableView fx:id="tblPOItem" layoutX="537.0" layoutY="166.0" prefHeight="363.0" prefWidth="494.0">
+         <columns>
+            <TableColumn fx:id="colPOBrand" prefWidth="142.0" text="Brand" />
+            <TableColumn fx:id="colPOItemName" prefWidth="159.0" text="Item Name" />
+            <TableColumn fx:id="colQuantity" minWidth="0.0" prefWidth="92.0" text="Quantity" />
+            <TableColumn fx:id="colLineTotal" prefWidth="100.0" text="Line Total" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnApprove" layoutX="570.0" layoutY="546.0" mnemonicParsing="false" onAction="#btnApproveAP" prefHeight="30.0" prefWidth="100.0" styleClass="Button" text="APPROVE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnUpdate" layoutX="900.0" layoutY="546.0" mnemonicParsing="false" onAction="#btnUpdateAP" prefHeight="30.0" prefWidth="100.0" styleClass="Button" text="UPDATE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnDelete" layoutX="790.0" layoutY="546.0" mnemonicParsing="false" onAction="#btnDeleteAP" prefHeight="30.0" prefWidth="100.0" styleClass="Button" text="DELETE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Label layoutX="828.0" layoutY="130.0" styleClass="SpecialLabel" text="Expected Total :" />
+      <Label fx:id="lblTotal" layoutX="918.0" layoutY="131.0" prefHeight="17.0" prefWidth="104.0" styleClass="SpecialLabel" text="0.00" />
+      <Label layoutX="539.0" layoutY="73.0" text="APPROVEL">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="lblDate" layoutX="606.0" layoutY="94.0" prefHeight="25.0" prefWidth="174.0" text="--" />
+      <Label layoutX="538.0" layoutY="98.0" text="Date :" />
+      <Label layoutX="828.0" layoutY="98.0" text="Supplier :" />
+      <Label layoutX="538.0" layoutY="135.0" text="Status :" />
+      <Label fx:id="lblSupplier" layoutX="890.0" layoutY="94.0" prefHeight="25.0" prefWidth="133.0" text="--" />
+      <Label fx:id="lblStatus" layoutX="606.0" layoutY="131.0" prefHeight="25.0" prefWidth="174.0" text="--" />
+      <Label layoutX="15.0" layoutY="101.0" text="Supplier :" />
+      <Label layoutX="16.0" layoutY="142.0" text="Status :" />
+      <ComboBox fx:id="cmbSupplier" layoutX="125.0" layoutY="97.0" onAction="#cmbSupplierAP" prefHeight="27.0" prefWidth="199.0" promptText="Select Supplier" styleClass="combobox" />
+      <ComboBox fx:id="cmbStatus" layoutX="125.0" layoutY="137.0" onAction="#cmbStatusAP" prefHeight="27.0" prefWidth="199.0" promptText="Select Status" styleClass="combobox" />
+      <Button fx:id="btnClearSearch" layoutX="350.0" layoutY="136.0" mnemonicParsing="false" onAction="#btnClearSearchAP" prefHeight="30.0" prefWidth="88.0" styleClass="Button" text="Clear Search" />
+      <Label layoutX="16.0" layoutY="72.0" text="PURCHASE ORDERS">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Button fx:id="btnPrint" layoutX="680.0" layoutY="546.0" mnemonicParsing="false" onAction="#btnPrintAP" prefHeight="30.0" prefWidth="100.0" styleClass="Button" text="  PRINT">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <tooltip>
+            <Tooltip text="Click for Print the Purchase Order" />
+         </tooltip>
+         <graphic>
+            <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/Printer.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Pagination fx:id="pagination" layoutX="11.0" layoutY="178.0" prefHeight="413.0" prefWidth="482.0" />
+      <TableView fx:id="tblPOrder" layoutX="12.0" layoutY="178.0" onKeyReleased="#tblPOrderKR" onMouseClicked="#tblPOrderMC" prefHeight="363.0" prefWidth="482.0">
+         <columns>
+            <TableColumn fx:id="colPONo" minWidth="88.0" prefWidth="92.0" text="PO No" />
+            <TableColumn fx:id="colDate" minWidth="114.0" prefWidth="173.0" text="Date" />
+            <TableColumn fx:id="colSupplier" minWidth="100.0" prefWidth="127.0" text="Supplier" />
+            <TableColumn fx:id="colStatus" minWidth="87.0" prefWidth="89.0" text="Status" />
+         </columns>
+         <tooltip>
+            <Tooltip text="Click on the PO for APPROVE, UPDATE, DELETE or PRINT" />
+         </tooltip>
+      </TableView>
+   </children>
+</AnchorPane>

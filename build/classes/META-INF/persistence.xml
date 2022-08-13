@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="iMobileTecPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class>entity.Employeestatus</class>
+    <class>entity.Civilstatus</class>
+    <class>entity.Employee</class>
+    <class>entity.Customer</class>
+    <class>entity.Role</class>
+    <class>entity.Module</class>
+    <class>entity.Userstatus</class>
+    <class>entity.User</class>
+    <class>entity.Userrole</class>
+    <class>entity.Gender</class>
+    <class>entity.Privilage</class>
+    <class>entity.Itemstatus</class>
+    <class>entity.Itemtype</class>
+    <class>entity.Item</class>
+    <class>entity.Supplier</class>
+    <class>entity.Porderitem</class>
+    <class>entity.Porderstatus</class>
+    <class>entity.Porder</class>
+    <class>entity.Poitem</class>
+    <class>entity.Postatus</class>
+    <class>entity.Grnotestatus</class>
+    <class>entity.Grnote</class>
+    <class>entity.Grnotepoitem</class>
+    <class>entity.Stockstatus</class>
+    <class>entity.Stock</class>
+    <class>entity.Invoice</class>
+    <class>entity.Designation</class>
+    <class>entity.Brand</class>
+    <class>entity.Warrenty</class>
+    <class>entity.Invoiceitem</class>
+    <class>entity.Repairstatus</class>
+    <class>entity.Repair</class>
+    <class>entity.Faults2</class>
+    <class>entity.Faults1</class>
+    <class>entity.Rtnsendto</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/imobiletecv4db?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="6395"/>
+    </properties>
+  </persistence-unit>
+</persistence>

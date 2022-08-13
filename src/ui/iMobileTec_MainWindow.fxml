@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1366.0" stylesheets="@../css/MainWindow.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.IMobileTec_MainWindowController">
+   <right>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="600.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="150.0">
+               <children>
+                  <Label layoutX="96.0" layoutY="4.0" styleClass="notify" text="NOTIFICATIONS">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="24.0" prefHeight="17.0" prefWidth="101.0" styleClass="notify" text="REORDER ITEMS">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tblReorder" layoutX="-2.0" layoutY="42.0" prefHeight="264.0" prefWidth="300.0" styleClass="notify">
+                    <columns>
+                      <TableColumn fx:id="colReorderBrand" prefWidth="108.0" text="Brand" />
+                      <TableColumn fx:id="colReorderItem" prefWidth="128.0" text="Item Name" />
+                        <TableColumn fx:id="colReorderQty" prefWidth="60.0" text="Qty" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="271.0" layoutY="18.0" onMouseClicked="#lblReorderRefreshMC" prefHeight="15.0" prefWidth="15.0" styleClass="refresh">
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/refresh-arrow.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Click here for refresh the Re-Order List" />
+                     </tooltip>
+                  </Label>
+               </children></AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="150.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="6.0" styleClass="notify" text="REPAIR PHONE RETURN DATE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tblRepair" layoutX="-1.0" layoutY="27.0" prefHeight="277.0" prefWidth="300.0">
+                    <columns>
+                      <TableColumn fx:id="colRepairItem" prefWidth="185.0" text="Item" />
+                      <TableColumn fx:id="colRepairDate" prefWidth="114.0" text="Return Date" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="271.0" layoutY="7.0" onMouseClicked="#lblRepairRefreshMC" prefHeight="15.0" prefWidth="15.0" styleClass="refresh">
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/refresh-arrow.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Click here for refresh the Repair Item List" />
+                     </tooltip>
+                  </Label>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </right>
+   <top>
+      <AnchorPane prefHeight="69.0" prefWidth="1366.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="66.0" fitWidth="300.0" layoutX="18.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/LogoWhite.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgUser" fitHeight="78.0" fitWidth="56.0" layoutX="1155.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/p1.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="1144.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/UserFront.png" />
+               </image>
+            </ImageView>
+            <VBox alignment="CENTER" layoutX="1222.0" prefHeight="82.0" prefWidth="100.0">
+               <children>
+                  <Label fx:id="lblUsername" text="Suresh">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnSignOut" focusTraversable="false" mnemonicParsing="false" onAction="#btnSignOutAP" text="Sign Out" underline="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip text="Click here for sign out from your user account" />
+                     </tooltip>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

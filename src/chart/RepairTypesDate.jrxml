@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c636f486-bef2-4e03-a009-7b73833e335e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fromDate" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="toDate" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     faults1.`id` AS faults1_id,
+     faults1.`name` AS faults1_name,
+     faults2.`id` AS faults2_id,
+     faults2.`name` AS faults2_name,
+     repair.`id` AS repair_id,
+     repair.`handedOverDate` AS repair_handedOverDate,
+     repair.`item` AS repair_item,
+     repair.`faults1_id` AS repair_faults1_id,
+     repair.`faults2_id` AS repair_faults2_id
+FROM
+     `faults1` faults1 INNER JOIN `repair` repair ON faults1.`id` = repair.`faults1_id`
+     INNER JOIN `faults2` faults2 ON repair.`faults2_id` = faults2.`id`
+WHERE repair.`handedOverDate` BETWEEN $P{fromDate} AND $P{toDate}]]>
+	</queryString>
+	<field name="faults1_id" class="java.lang.Integer"/>
+	<field name="faults1_name" class="java.lang.String"/>
+	<field name="faults2_id" class="java.lang.Integer"/>
+	<field name="faults2_name" class="java.lang.String"/>
+	<field name="repair_id" class="java.lang.Integer"/>
+	<field name="repair_handedOverDate" class="java.sql.Date"/>
+	<field name="repair_item" class="java.lang.String"/>
+	<field name="repair_faults1_id" class="java.lang.Integer"/>
+	<field name="repair_faults2_id" class="java.lang.Integer"/>
+	<variable name="fait1_count" class="java.lang.Integer" resetType="Column" incrementType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{faults1_name}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50">
+			<staticText>
+				<reportElement x="206" y="4" width="136" height="20" uuid="34fc7f92-db73-4ac2-9e17-6bc069297bfa"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Types of Repairs]]></text>
+			</staticText>
+			<textField pattern="MM/dd/yyyy">
+				<reportElement x="161" y="26" width="100" height="20" uuid="26525b5b-45c7-48c1-b863-728e9044caea"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{fromDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="263" y="26" width="21" height="20" uuid="ba4c8de1-f4b7-4ce1-b1e5-ad7d4fa9d6c6"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[to]]></text>
+			</staticText>
+			<textField pattern="MM/dd/yyyy">
+				<reportElement x="285" y="26" width="100" height="20" uuid="63612468-2b79-44b4-8316-aca83f9aad79"/>
+				<textFieldExpression><![CDATA[$P{toDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<summary>
+		<band height="353" splitType="Stretch">
+			<barChart>
+				<chart>
+					<reportElement x="5" y="10" width="543" height="333" uuid="e35b5ac5-effb-49d5-a842-06fc2aaafbeb"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{faults1_name}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{repair_handedOverDate}]]></categoryExpression>
+						<valueExpression><![CDATA[$V{fait1_count}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</summary>
+</jasperReport>

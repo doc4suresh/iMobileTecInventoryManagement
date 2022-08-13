@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1050.0" stylesheets="@../css/commonStyles.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.RepairManagmentController">
+   <center>
+      <AnchorPane prefHeight="620.0" prefWidth="1050.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="620.0" fitWidth="1050.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/RepairBack.png" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b2c3d3" height="396.0" layoutX="18.0" layoutY="214.0" stroke="#b2c3d3" strokeType="INSIDE" width="1011.0" />
+            <GridPane layoutX="24.0" layoutY="52.0" prefHeight="559.0" prefWidth="1000.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="108.0" minWidth="10.0" prefWidth="97.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="114.0" minWidth="10.0" prefWidth="114.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="10.0" prefWidth="101.33333587646484" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="10.0" prefWidth="101.33333587646484" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="10.0" prefWidth="101.33333587646484" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="10.0" prefWidth="101.33333587646484" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="10.0" prefWidth="101.33333587646484" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="10.0" prefWidth="101.33333587646484" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="10.0" prefWidth="101.33333587646484" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Job No." GridPane.rowIndex="1">
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic>
+                  </Label>
+                  <Label text="Got Date" GridPane.rowIndex="2">
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic>
+                  </Label>
+                  <Label fx:id="lblGotDate" text="--" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblJobNo" text="--" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Customer Name" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="15.0" />
+                     </GridPane.margin>
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic>
+                  </Label>
+                  <Label text="Contact No." GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="25.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="txtCustomerName" onKeyReleased="#txtCustomerNameKR" styleClass="combobox" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtContactNo" onKeyReleased="#txtContactNoKR" styleClass="combobox" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <Label text="Item Model" GridPane.rowIndex="3">
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic>
+                  </Label>
+                  <Label text="IMEI No." GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="25.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="txtItemModel" onKeyReleased="#txtItemModelKR" styleClass="combobox" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="txtIMEI" onKeyReleased="#txtIMEIKR" styleClass="combobox" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <TextArea fx:id="txaRepordedItems" onKeyReleased="#txaRepordedItemsKR" prefHeight="200.0" prefWidth="200.0" styleClass="combobox" text="--" GridPane.columnIndex="7" GridPane.rowIndex="1" GridPane.rowSpan="3" />
+                  <Label text="Fault 1" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic>
+                  </Label>
+                  <Label text="Reported Items" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Agreed to Return" GridPane.rowIndex="4">
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic>
+                  </Label>
+                  <Label text="Returned Date" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="25.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Actual Cost" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="30.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Price" GridPane.columnIndex="6" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <DatePicker fx:id="dtpAgreed" onAction="#dtpAgreedAP" styleClass="combobox" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <tooltip>
+                        <Tooltip text="Enter the date which you are agree with customer for return the item" />
+                     </tooltip></DatePicker>
+                  <DatePicker fx:id="dtpReturned" onAction="#dtpReturnedAP" styleClass="combobox" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                     <tooltip>
+                        <Tooltip text="Enter the date which you are returned the item to customer" />
+                     </tooltip></DatePicker>
+                  <TextField fx:id="txtActualCost" alignment="CENTER_RIGHT" onKeyReleased="#txtActualCostKR" styleClass="combobox" text="00.00" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                     <tooltip>
+                        <Tooltip text="Enter the amount spend for accessories and items" />
+                     </tooltip></TextField>
+                  <TextField fx:id="txtPrice" alignment="CENTER_RIGHT" onKeyReleased="#txtPriceKR" styleClass="combobox" text="00.00" GridPane.columnIndex="7" GridPane.rowIndex="4">
+                     <tooltip>
+                        <Tooltip text="Enter the amount got from customer" />
+                     </tooltip></TextField>
+                  <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#btnAddAP" prefHeight="25.0" prefWidth="70.0" text="ADD" GridPane.columnIndex="8" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="30.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#btnUpdateAP" prefHeight="25.0" prefWidth="70.0" text="UPDATE" GridPane.columnIndex="8" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="30.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#btnDeleteAP" prefHeight="25.0" prefWidth="70.0" text="DELETE" GridPane.columnIndex="8" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="30.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnClear" mnemonicParsing="false" onAction="#btnClearAP" prefHeight="25.0" prefWidth="70.0" text="CLEAR" GridPane.columnIndex="8" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="30.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip text="Click for clear fields" />
+                     </tooltip>
+                  </Button>
+                  <Label text="MANAGE REPAIR ITEMS" GridPane.columnSpan="2">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="SEARCH REPAIR ITEMS" GridPane.columnSpan="2" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Job No." GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets left="40.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Item Model" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets left="35.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Repair Status" GridPane.columnIndex="4" GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets left="30.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Repair Status" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic>
+                  </Label>
+                  <ComboBox fx:id="cmbStatus" onAction="#cmbStatusAP" prefWidth="150.0" styleClass="combobox" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                  <TextField fx:id="txtSearchJobNo" onKeyReleased="#txtSearchJobNoKR" styleClass="combobox" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <TextField fx:id="txtSearchItemModel" onKeyReleased="#txtSearchItemModelKR" styleClass="combobox" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                  <ComboBox fx:id="cmbSearchStatus" onAction="#cmbSearchStatusAP" prefWidth="150.0" styleClass="combobox" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+                  <Pagination fx:id="pagination" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="9" GridPane.rowIndex="8" GridPane.rowSpan="12" />
+                  <TableView fx:id="tblRepair" onMouseClicked="#tblRepairMC" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="9" GridPane.rowIndex="8" GridPane.rowSpan="10">
+                    <columns>
+                      <TableColumn fx:id="colJobNo" prefWidth="85.66666412353516" text="Job No." />
+                      <TableColumn fx:id="colCustomerName" prefWidth="117.0" text="Customer Name" />
+                        <TableColumn fx:id="colItemModel" prefWidth="136.66665649414062" text="Item Model" />
+                        <TableColumn fx:id="colGotDate" prefWidth="133.0" text="Got Date" />
+                        <TableColumn fx:id="colAgreedReturn" prefWidth="123.0" text="Agreed to Return" />
+                        <TableColumn fx:id="colActualCost" prefWidth="133.0" style="-fx-text-allign: Right;" text="Actual Cost" />
+                        <TableColumn fx:id="colPrice" prefWidth="132.66668701171875" text="Price" />
+                        <TableColumn fx:id="colStatus" prefWidth="133.3333740234375" text="Repair Status" />
+                    </columns>
+                     <GridPane.margin>
+                        <Insets top="10.0" />
+                     </GridPane.margin>
+                     <tooltip>
+                        <Tooltip text="Click on the item for UPDATE or DELETE" />
+                     </tooltip>
+                  </TableView>
+                  <Label text="Rs." GridPane.columnIndex="5" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Rs." GridPane.columnIndex="7" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <HBox prefHeight="28.0" prefWidth="270.0" GridPane.columnIndex="6" GridPane.columnSpan="3" GridPane.rowIndex="7">
+                     <children>
+                        <Button fx:id="btnSearchLock" mnemonicParsing="false" onAction="#btnSearchLockAP" prefHeight="25.0" prefWidth="100.0" text="SEARCH LOCK">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                           <tooltip>
+                              <Tooltip text="Click for Lock Search fields with values" />
+                           </tooltip>
+                        </Button>
+                        <Button fx:id="btnSearchClear" mnemonicParsing="false" onAction="#btnSearchClearAP" prefHeight="25.0" prefWidth="100.0" text="SEARCH CLEAR">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                           <tooltip>
+                              <Tooltip text="Click for clear the search fields" />
+                           </tooltip>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Label text="Fault 2" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="30.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <ComboBox fx:id="cmbFault1" onAction="#cmbFault1AP" prefWidth="150.0" styleClass="combobox" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="cmbFault2" onAction="#cmbFault2AP" prefWidth="150.0" styleClass="combobox" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                  <Label onMouseClicked="#lblNewFaultMC" text="+" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="2.0" />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+            </GridPane>
+            <Button layoutX="13.0" layoutY="13.0" mnemonicParsing="false" onAction="#btnHomeAP" prefHeight="26.0" prefWidth="26.0" styleClass="homeButton" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

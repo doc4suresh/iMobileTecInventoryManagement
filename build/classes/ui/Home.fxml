@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.HomeController">
+   <center>
+      <AnchorPane prefHeight="620.0" prefWidth="1050.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="620.0" fitWidth="1050.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/HomeBack.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="381.0" layoutY="284.0" mnemonicParsing="false" onAction="#btnEmployeeAp">
+               <graphic>
+                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/MainIcons/EmployeeIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="203.0" layoutY="471.0" mnemonicParsing="false" onAction="#btnItemManagmentAP">
+               <graphic>
+                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/MainIcons/WarehosuIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="381.0" layoutY="95.0" mnemonicParsing="false" onAction="#btnRepairAP">
+               <graphic>
+                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/MainIcons/RepairIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="203.0" layoutY="94.0" mnemonicParsing="false" onAction="#btnOutletAP" prefHeight="74.0" prefWidth="73.0">
+               <graphic>
+                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/MainIcons/OutletIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="559.0" layoutY="284.0" mnemonicParsing="false" onAction="#btnUserAP" prefHeight="74.0" prefWidth="73.0">
+               <graphic>
+                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/MainIcons/User.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="736.0" layoutY="283.0" mnemonicParsing="false" onAction="#btnPrivilageAP" prefHeight="74.0" prefWidth="73.0">
+               <graphic>
+                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/MainIcons/Privilage.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="203.0" layoutY="283.0" mnemonicParsing="false" onAction="#btnSpplierAP" prefHeight="74.0" prefWidth="73.0">
+               <graphic>
+                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/MainIcons/SupplierIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="559.0" layoutY="94.0" mnemonicParsing="false" onAction="#btnPoderAP" prefHeight="74.0" prefWidth="73.0">
+               <graphic>
+                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/MainIcons/PorderIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="736.0" layoutY="95.0" mnemonicParsing="false" onAction="#btnGRNAP">
+               <graphic>
+                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/MainIcons/GRNote.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="381.0" layoutY="471.0" mnemonicParsing="false" onAction="#btnReportAP">
+               <graphic>
+                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/MainIcons/Reports.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="559.0" layoutY="471.0" mnemonicParsing="false" onAction="#btnChartAP">
+               <graphic>
+                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/MainIcons/Chart.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="736.0" layoutY="471.0" mnemonicParsing="false" onAction="#btnGuideAP">
+               <graphic>
+                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/MainIcons/UserGuid.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

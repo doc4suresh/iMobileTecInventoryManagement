@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1050.0" stylesheets="@../css/commonStyles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.SupplierController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="620.0" fitWidth="1050.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/SupManageBack.png" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b2c3d3" height="411.0" layoutX="503.0" layoutY="72.0" stroke="#b2c3d3" strokeType="INSIDE" width="519.0" />
+            <GridPane layoutX="43.0" layoutY="96.0" prefHeight="401.0" prefWidth="967.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.66665649414062" minWidth="10.0" prefWidth="124.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="377.6666564941406" minWidth="9.999984741210938" prefWidth="293.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="419.0" minWidth="10.0" prefWidth="68.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="457.6666259765625" minWidth="0.0" prefWidth="102.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="479.33331298828125" minWidth="10.0" prefWidth="299.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="374.6666259765625" minWidth="10.0" prefWidth="123.33331298828125" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="152.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="94.66665649414062" minHeight="0.0" prefHeight="7.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="141.66668701171875" minHeight="0.0" prefHeight="51.333343505859375" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="88.0" minHeight="9.33331298828125" prefHeight="13.33331298828125" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Company">
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic></Label>
+                  <Label text="Contact Person" GridPane.rowIndex="1">
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic></Label>
+                  <Label text="Address" GridPane.rowIndex="2" />
+                  <Label text="Land Phone No:" GridPane.rowIndex="4" />
+                  <Label text="Mobile Phone No:" GridPane.rowIndex="5">
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic></Label>
+                  <Label text="Email Address" GridPane.rowIndex="6" />
+                  <TextField fx:id="txtCompany" onKeyReleased="#txtCompanyKR" promptText="Enter Company Name" styleClass="combobox" GridPane.columnIndex="1" />
+                  <TextField fx:id="txtContactPerson" onKeyReleased="#txtContactPersonKR" promptText="Enter Contact Person Name" styleClass="combobox" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextArea fx:id="txtAddress" onKeyReleased="#txtAddressKR" prefHeight="38.0" prefWidth="286.0" promptText="Enter Company Address" styleClass="combobox" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.rowSpan="2" />
+                  <TextField fx:id="txtLand" onKeyReleased="#txtLandKR" promptText="Eg: 0XXXXXXXXX" styleClass="combobox" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="txtMobile" onKeyReleased="#txtMobileKR" promptText="Eg: 07XXXXXXXX" styleClass="combobox" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="txtEmail" onKeyReleased="#txtEmailKR" promptText="Eg: exsample@exsample.com" styleClass="combobox" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <HBox prefHeight="47.0" prefWidth="286.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                     <children>
+                        <Button fx:id="btnDelete" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#btnDeleteAP" prefHeight="30.0" prefWidth="64.0" text="DELETE">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnUpdate" alignment="CENTER" mnemonicParsing="false" onAction="#btnUpdateAP" prefHeight="30.0" prefWidth="69.0" text="UPDATE">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnClear" alignment="CENTER" mnemonicParsing="false" onAction="#btnClearAP" prefHeight="30.0" prefWidth="64.0" text="CLEAR">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Click for clear the fields" />
+                           </tooltip>
+                        </Button>
+                        <Button fx:id="btnAdd" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#btnAddAP" prefHeight="30.0" prefWidth="64.0" text="ADD" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Button>
+                     </children>
+                  </HBox>
+                  <Label text="Company" GridPane.columnIndex="3" />
+                  <Label text="Contact Person" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Button fx:id="btnSearchClear" mnemonicParsing="false" onAction="#btnSearchClearAP" prefHeight="30.0" prefWidth="90.0" text="Clear Search" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <Pagination fx:id="pagination" maxPageIndicatorCount="5" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.columnSpan="3" GridPane.rowIndex="2" GridPane.rowSpan="7" />
+                  <TableView fx:id="tblSupplier" onKeyReleased="#tblSupplierKR" onMouseClicked="#tblSupplierMC" prefHeight="259.0" prefWidth="493.0" GridPane.columnIndex="3" GridPane.columnSpan="3" GridPane.rowIndex="2" GridPane.rowSpan="6">
+                    <columns>
+                      <TableColumn fx:id="colCompany" prefWidth="121.66668701171875" text="Company" />
+                      <TableColumn fx:id="colContactPerson" prefWidth="147.33331298828125" text="Contact Person" />
+                        <TableColumn fx:id="colLand" prefWidth="117.0" text="Land Phone No:" />
+                        <TableColumn fx:id="colMobile" prefWidth="116.0" text="Mobile No:" />
+                    </columns>
+                     <tooltip>
+                        <Tooltip text="Click on the row for UPDATE or DELETE Supplier" />
+                     </tooltip>
+                  </TableView>
+                  <TextField fx:id="txtSearchCompany" onKeyReleased="#txtSearchCompanyKR" prefHeight="25.0" prefWidth="270.0" promptText="Enter Company Name" styleClass="combobox" GridPane.columnIndex="4">
+                     <GridPane.margin>
+                        <Insets right="20.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="txtSearchContactPerson" onKeyReleased="#txtSearchContactPersonKR" prefHeight="25.0" prefWidth="270.0" promptText="Enter Contact Person Name" styleClass="combobox" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets right="20.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+            </GridPane>
+            <Label layoutX="516.0" layoutY="79.0" text="SEARCH SUPPLIER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="41.0" layoutY="79.0" text="MANAGE SUPPLIER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnHomeAP" prefHeight="26.0" prefWidth="26.0" styleClass="homeButton">
+               <tooltip>
+                  <Tooltip text="Click here for navigate to Main Window" />
+               </tooltip></Button>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

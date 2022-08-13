@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="330.0" prefWidth="560.0" stylesheets="@../css/commonStyles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.ItemBrandController">
+   <children>
+      <ImageView fitHeight="330.0" fitWidth="560.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/BrandBack.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="46.0" layoutY="81.0" text="Brand" />
+      <TextField fx:id="txtBrand" layoutX="96.0" layoutY="77.0" onKeyReleased="#txtBrandKR" prefHeight="25.0" prefWidth="208.0" promptText="Enter New Brand" styleClass="combobox">
+         <tooltip>
+            <Tooltip text="Enter new Brand Name for insert to the Database" />
+         </tooltip></TextField>
+      <Button fx:id="btnAdd" layoutX="160.0" layoutY="123.0" mnemonicParsing="false" onAction="#btnAddAP" prefHeight="25.0" prefWidth="80.0" text="ADD">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnClear" layoutX="160.0" layoutY="228.0" mnemonicParsing="false" onAction="#btnClearAP" prefHeight="25.0" prefWidth="80.0" text="CLEAR">
+         <tooltip>
+            <Tooltip text="Clear the Brand Name Text Field" />
+         </tooltip>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnUpdate" layoutX="160.0" layoutY="158.0" mnemonicParsing="false" onAction="#btnUpdateAP" prefHeight="25.0" prefWidth="80.0" text="UPDATE">
+          <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnDelete" layoutX="160.0" layoutY="193.0" mnemonicParsing="false" onAction="#btnDeleteAP" prefHeight="25.0" prefWidth="80.0" text="DELETE">
+          <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <ListView fx:id="lstBrand" layoutX="325.0" layoutY="76.0" onMouseClicked="#lstBandMC" prefHeight="211.0" prefWidth="200.0">
+         <tooltip>
+            <Tooltip text="click on the Brand you want to UPDATE or DELETE" />
+         </tooltip></ListView>
+   </children>
+</AnchorPane>

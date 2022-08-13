@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1050.0" stylesheets="@../css/commonStyles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.ItemManagmentController">
+   <center>
+      <AnchorPane prefHeight="620.0" prefWidth="1050.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="620.0" fitWidth="1050.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/ItemManagmentBack.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="10.0" layoutY="9.0" mnemonicParsing="false" onAction="#btnHomeAP" prefHeight="26.0" prefWidth="26.0" styleClass="homeButton">
+               <tooltip>
+                  <Tooltip text="Click for navigate to Main Window" />
+               </tooltip></Button>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b2c3d3" height="519.0" layoutX="493.0" layoutY="69.0" stroke="#b2c3d3" strokeType="INSIDE" width="502.0" />
+            <Label layoutX="501.0" layoutY="78.0" text="SEARCH ITEM">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="46.0" layoutY="78.0" text="MANAGE ITEM">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cmbSupplier" layoutX="146.0" layoutY="102.0" onAction="#cmbSupplierAP" prefHeight="30.0" prefWidth="250.0" promptText="Select Supplier" styleClass="combobox" />
+            <ComboBox fx:id="cmbType" layoutX="146.0" layoutY="144.0" onAction="#cmbTypeAP" prefHeight="30.0" prefWidth="250.0" promptText="Select Type" styleClass="combobox" />
+            <ComboBox fx:id="cmbBrand" layoutX="146.0" layoutY="187.0" onAction="#cmbBrandAP" prefHeight="30.0" prefWidth="250.0" promptText="Select Brand" styleClass="combobox" />
+            <TextField fx:id="txtName" layoutX="146.0" layoutY="231.0" onKeyReleased="#txtNameKR" prefHeight="30.0" prefWidth="250.0" promptText="Type Name" styleClass="combobox" />
+            <TextField fx:id="txtPPrice" alignment="CENTER_RIGHT" layoutX="146.0" layoutY="275.0" onKeyReleased="#txtPpriceKR" prefHeight="30.0" prefWidth="150.0" promptText="00.00" styleClass="combobox" />
+            <Label layoutX="151.0" layoutY="282.0" text="Rs." />
+            <Label fx:id="lblPpriceInvalid" layoutX="302.0" layoutY="273.0" styleClass="redStar">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblPpriceInvalidEg" layoutX="302.0" layoutY="290.0" styleClass="redStar">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtSPrice" alignment="CENTER_RIGHT" layoutX="146.0" layoutY="319.0" onKeyReleased="#txtSpriceKR" prefHeight="30.0" prefWidth="150.0" promptText="00.00" styleClass="combobox" />
+            <Label layoutX="151.0" layoutY="326.0" text="Rs." />
+            <Label fx:id="lblSpriceInvalid" layoutX="302.0" layoutY="318.0" styleClass="redStar">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblSpriceInvalidEg" layoutX="302.0" layoutY="335.0" styleClass="redStar">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtQty" alignment="CENTER_RIGHT" layoutX="146.0" layoutY="363.0" onKeyReleased="#txtQtyKR" prefHeight="30.0" prefWidth="150.0" promptText="Enter Quntity" styleClass="combobox" />
+            <TextField fx:id="txtRop" alignment="CENTER_RIGHT" layoutX="146.0" layoutY="407.0" onKeyReleased="#txtRopKR" prefHeight="30.0" prefWidth="150.0" promptText="Enter Reorder Quantity" styleClass="combobox" />
+            <ComboBox fx:id="cmbStatus" layoutX="146.0" layoutY="451.0" onAction="#cmbStatusAP" prefHeight="30.0" prefWidth="250.0" promptText="Select Status of Item" styleClass="combobox" />
+            <Button fx:id="btnAdd" layoutX="331.0" layoutY="501.0" mnemonicParsing="false" onAction="#btnAddAP" prefHeight="30.0" prefWidth="65.0" text="ADD">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+            </Button>
+            <Button fx:id="btnClear" layoutX="255.0" layoutY="501.0" mnemonicParsing="false" onAction="#btnClearAP" prefHeight="30.0" prefWidth="65.0" text="CLEAR">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+            </Button>
+            <Button fx:id="btnDelete" layoutX="179.0" layoutY="501.0" mnemonicParsing="false" onAction="#btnDeleteAP" prefHeight="30.0" prefWidth="65.0" text="DELETE">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+            </Button>
+            <Button fx:id="btnUpdate" layoutX="104.0" layoutY="501.0" mnemonicParsing="false" onAction="#btnUpdateAP" prefHeight="30.0" prefWidth="65.0" text="UPDATE">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+            </Button>
+            <Label layoutX="46.0" layoutY="109.0" text="Supplier">
+               <graphic>
+                  <Label styleClass="redStar" text="*" />
+               </graphic>
+            </Label>
+            <Label layoutX="46.0" layoutY="151.0" text="Item Type">
+               <graphic>
+                  <Label styleClass="redStar" text="*" />
+               </graphic></Label>
+            <Label layoutX="46.0" layoutY="194.0" text="Brand">
+               <graphic>
+                  <Label styleClass="redStar" text="*" />
+               </graphic></Label>
+            <Label layoutX="46.0" layoutY="238.0" text="Name">
+               <graphic>
+                  <Label styleClass="redStar" text="*" />
+               </graphic></Label>
+            <Label layoutX="46.0" layoutY="282.0" text="Purchase Price">
+               <graphic>
+                  <Label styleClass="redStar" text="*" />
+               </graphic></Label>
+            <Label layoutX="46.0" layoutY="326.0" text="Sale Price">
+               <graphic>
+                  <Label styleClass="redStar" text="*" />
+               </graphic></Label>
+            <Label layoutX="46.0" layoutY="370.0" text="Quantity">
+               <graphic>
+                  <Label styleClass="redStar" text="*" />
+               </graphic></Label>
+            <Label layoutX="46.0" layoutY="414.0" text="Reorder Point">
+               <graphic>
+                  <Label styleClass="redStar" text="*" />
+               </graphic></Label>
+            <Label layoutX="46.0" layoutY="458.0" text="Status">
+               <graphic>
+                  <Label styleClass="redStar" text="*" />
+               </graphic></Label>
+            <Label layoutX="500.0" layoutY="107.0" text="Search by Type" />
+            <Label layoutX="500.0" layoutY="150.0" text="Search by Brand" />
+            <Label layoutX="500.0" layoutY="194.0" text="Search by Name" />
+            <Label layoutX="500.0" layoutY="238.0" text="Search by Status" />
+            <ComboBox fx:id="cmbSearchItemType" layoutX="604.0" layoutY="100.0" onAction="#cmbSearchItemTypeAP" prefHeight="30.0" prefWidth="280.0" promptText="Select Type" styleClass="combobox" />
+            <ComboBox fx:id="cmbSearchItemBrand" layoutX="604.0" layoutY="143.0" onAction="#cmbSearchItemBrandAP" prefHeight="30.0" prefWidth="280.0" promptText="Select Brand" styleClass="combobox" />
+            <TextField fx:id="txtSearchName" layoutX="604.0" layoutY="187.0" onKeyReleased="#txtSearchNameKR" prefHeight="30.0" prefWidth="280.0" promptText="Enter Name for Search" styleClass="combobox" />
+            <ComboBox fx:id="cmbSearchItemStatus" layoutX="604.0" layoutY="232.0" onAction="#cmbSearchItemStatusAP" prefHeight="30.0" prefWidth="280.0" promptText="Select Status of Item" styleClass="combobox" />
+            <Button fx:id="btnSearchClear" layoutX="897.0" layoutY="233.0" mnemonicParsing="false" onAction="#btnSearchClearAP" prefHeight="30.0" prefWidth="87.0" text="Clear Search">
+               <tooltip>
+                  <Tooltip text="Clear the search fields" />
+               </tooltip></Button>
+            <Button fx:id="btnSearchLock" layoutX="897.0" layoutY="188.0" mnemonicParsing="false" onAction="#btnSearchLockAP" prefHeight="30.0" prefWidth="87.0" text="Lock Criteria">
+               <tooltip>
+                  <Tooltip text="Loack the field with value for search with many criteria" />
+               </tooltip></Button>
+            <Pagination fx:id="pagination" layoutX="504.0" layoutY="277.0" maxPageIndicatorCount="5" prefHeight="300.0" prefWidth="480.0" />
+            <TableView fx:id="tblItem" layoutX="505.0" layoutY="279.0" onKeyReleased="#tblItemKR" onMouseClicked="#tblItemMC" prefHeight="253.0" prefWidth="479.0">
+              <columns>
+                <TableColumn fx:id="colType" prefWidth="98.66668701171875" text="Type" />
+                <TableColumn fx:id="colBrand" prefWidth="124.0" text="Brand" />
+                  <TableColumn fx:id="colName" prefWidth="162.0" text="Name" />
+                  <TableColumn fx:id="colStatus" prefWidth="96.0" text="Status" />
+              </columns>
+               <tooltip>
+                  <Tooltip text="Click on the row for UPDATE or DELETE Item" />
+               </tooltip>
+            </TableView>
+            <Label fx:id="lblNewType" layoutX="398.0" layoutY="145.0" onMouseClicked="#lblNewTypeMC" text="+">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="Click here to ADD, UPDATE or DELETE Item Type" />
+               </tooltip></Label>
+            <Label fx:id="lblNewBrand" layoutX="398.0" layoutY="188.0" onMouseClicked="#lblNewBrandMC" text="+">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="Click here to ADD, UPDATE or DELETE Brand" />
+               </tooltip></Label>
+            <Label fx:id="lblNewSupplier" layoutX="398.0" layoutY="103.0" onMouseClicked="#lblNewSupplierMC" text="+">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="Click here to ADD, UPDATE or DELETE Supplier" />
+               </tooltip></Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

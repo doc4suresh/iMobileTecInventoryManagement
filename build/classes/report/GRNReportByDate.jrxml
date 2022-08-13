@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5a5e3008-4d39-4437-9cf2-5b1fe9cddb3b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="65"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="FromDate" class="java.util.Date"/>
+	<parameter name="ToDate" class="java.util.Date"/>
+	<queryString>
+		<![CDATA[SELECT
+     grnote.`id` AS grnote_id,
+     grnote.`no` AS grnote_no,
+     grnote.`datetime` AS grnote_datetime,
+     grnote.`grossamount` AS grnote_grossamount,
+     grnote.`totaldiscountper` AS grnote_totaldiscountper,
+     grnote.`totaldiscountvalue` AS grnote_totaldiscountvalue,
+     grnote.`netamount` AS grnote_netamount,
+     grnote.`porder_id` AS grnote_porder_id,
+     grnote.`grnotestatus_id` AS grnote_grnotestatus_id,
+     grnote.`user_employee_id` AS grnote_user_employee_id,
+     grnotepoitem.`id` AS grnotepoitem_id,
+     grnotepoitem.`grnote_id` AS grnotepoitem_grnote_id,
+     grnotepoitem.`poitem_id` AS grnotepoitem_poitem_id,
+     grnotepoitem.`qtyrecieved` AS grnotepoitem_qtyrecieved,
+     grnotepoitem.`pprice` AS grnotepoitem_pprice,
+     grnotepoitem.`sprice` AS grnotepoitem_sprice,
+     grnotepoitem.`linetotal` AS grnotepoitem_linetotal,
+     grnotestatus.`id` AS grnotestatus_id,
+     grnotestatus.`name` AS grnotestatus_name,
+     porder.`id` AS porder_id,
+     porder.`no` AS porder_no,
+     porder.`datetime` AS porder_datetime,
+     porder.`total` AS porder_total,
+     porder.`user_employee_id` AS porder_user_employee_id,
+     porder.`supplier_id` AS porder_supplier_id,
+     porder.`postatus_id` AS porder_postatus_id,
+     poitem.`id` AS poitem_id,
+     poitem.`porder_id` AS poitem_porder_id,
+     poitem.`item_id` AS poitem_item_id,
+     poitem.`qtyrequested` AS poitem_qtyrequested,
+     poitem.`qtyrecieved` AS poitem_qtyrecieved,
+     poitem.`linetotal` AS poitem_linetotal,
+     poitem.`pPrice` AS poitem_pPrice,
+     item.`id` AS item_id,
+     item.`itemtype_id` AS item_itemtype_id,
+     item.`brand_id` AS item_brand_id,
+     item.`name` AS item_name,
+     item.`pprice` AS item_pprice,
+     item.`sprice` AS item_sprice,
+     item.`qty` AS item_qty,
+     item.`rop` AS item_rop,
+     item.`itemstatus_id` AS item_itemstatus_id,
+     item.`supplier_id` AS item_supplier_id
+FROM
+     `grnote` grnote INNER JOIN `grnotepoitem` grnotepoitem ON grnote.`id` = grnotepoitem.`grnote_id`
+     INNER JOIN `grnotestatus` grnotestatus ON grnote.`grnotestatus_id` = grnotestatus.`id`
+     INNER JOIN `porder` porder ON grnote.`porder_id` = porder.`id`
+     INNER JOIN `poitem` poitem ON porder.`id` = poitem.`porder_id`
+     AND poitem.`id` = grnotepoitem.`poitem_id`
+     INNER JOIN `item` item ON poitem.`item_id` = item.`id`
+WHERE
+     grnote.`datetime` BETWEEN $P{FromDate} AND $P{ToDate}]]>
+	</queryString>
+	<field name="grnote_id" class="java.lang.Integer"/>
+	<field name="grnote_no" class="java.lang.String"/>
+	<field name="grnote_datetime" class="java.sql.Timestamp"/>
+	<field name="grnote_grossamount" class="java.math.BigDecimal"/>
+	<field name="grnote_totaldiscountper" class="java.math.BigDecimal"/>
+	<field name="grnote_totaldiscountvalue" class="java.math.BigDecimal"/>
+	<field name="grnote_netamount" class="java.math.BigDecimal"/>
+	<field name="grnote_porder_id" class="java.lang.Integer"/>
+	<field name="grnote_grnotestatus_id" class="java.lang.Integer"/>
+	<field name="grnote_user_employee_id" class="java.lang.Integer"/>
+	<field name="grnotepoitem_id" class="java.lang.Integer"/>
+	<field name="grnotepoitem_grnote_id" class="java.lang.Integer"/>
+	<field name="grnotepoitem_poitem_id" class="java.lang.Integer"/>
+	<field name="grnotepoitem_qtyrecieved" class="java.lang.Integer"/>
+	<field name="grnotepoitem_pprice" class="java.math.BigDecimal"/>
+	<field name="grnotepoitem_sprice" class="java.math.BigDecimal"/>
+	<field name="grnotepoitem_linetotal" class="java.math.BigDecimal"/>
+	<field name="grnotestatus_id" class="java.lang.Integer"/>
+	<field name="grnotestatus_name" class="java.lang.String"/>
+	<field name="porder_id" class="java.lang.Integer"/>
+	<field name="porder_no" class="java.lang.String"/>
+	<field name="porder_datetime" class="java.sql.Timestamp"/>
+	<field name="porder_total" class="java.math.BigDecimal"/>
+	<field name="porder_user_employee_id" class="java.lang.Integer"/>
+	<field name="porder_supplier_id" class="java.lang.Integer"/>
+	<field name="porder_postatus_id" class="java.lang.Integer"/>
+	<field name="poitem_id" class="java.lang.Integer"/>
+	<field name="poitem_porder_id" class="java.lang.Integer"/>
+	<field name="poitem_item_id" class="java.lang.Integer"/>
+	<field name="poitem_qtyrequested" class="java.lang.Integer"/>
+	<field name="poitem_qtyrecieved" class="java.lang.Integer"/>
+	<field name="poitem_linetotal" class="java.math.BigDecimal"/>
+	<field name="poitem_pPrice" class="java.math.BigDecimal"/>
+	<field name="item_id" class="java.lang.Integer"/>
+	<field name="item_itemtype_id" class="java.lang.Integer"/>
+	<field name="item_brand_id" class="java.lang.Integer"/>
+	<field name="item_name" class="java.lang.String"/>
+	<field name="item_pprice" class="java.math.BigDecimal"/>
+	<field name="item_sprice" class="java.math.BigDecimal"/>
+	<field name="item_qty" class="java.lang.Integer"/>
+	<field name="item_rop" class="java.lang.Integer"/>
+	<field name="item_itemstatus_id" class="java.lang.Integer"/>
+	<field name="item_supplier_id" class="java.lang.Integer"/>
+	<group name="grnotestatus_name">
+		<groupExpression><![CDATA[$F{grnotestatus_name}]]></groupExpression>
+		<groupHeader>
+			<band height="33">
+				<staticText>
+					<reportElement uuid="74158210-ca19-473d-bba4-042993140f13" mode="Opaque" x="0" y="0" width="62" height="32" forecolor="#666666" backcolor="#E6E6E6"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Status]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="4d723b53-f9ec-4886-83cd-fc65dd8b0c02" mode="Opaque" x="62" y="0" width="740" height="32" forecolor="#006699" backcolor="#E6E6E6"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="16" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{grnotestatus_name}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement uuid="bbfb9654-b1af-4d1a-a138-5d5f12c9526b" x="-20" y="32" width="842" height="1" forecolor="#666666"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="GRN No.">
+		<groupExpression><![CDATA[$F{grnote_no}]]></groupExpression>
+		<groupHeader>
+			<band height="50">
+				<staticText>
+					<reportElement uuid="c993e2ce-17cd-4f9a-b66a-21293f36dc58" mode="Opaque" x="180" y="0" width="50" height="27" forecolor="#666666" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Left" verticalAlignment="Bottom">
+						<font size="12" isBold="false"/>
+					</textElement>
+					<text><![CDATA[GRN No.]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="4ae1a810-6b22-4238-a842-1a95f3e1283c" mode="Opaque" x="230" y="0" width="70" height="27" forecolor="#006699" backcolor="#E6E6E6"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{grnote_no}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="e166175a-57b8-4392-a1a6-9470140973d1" mode="Opaque" x="0" y="0" width="73" height="27" forecolor="#666666" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Left" verticalAlignment="Bottom">
+						<font size="12" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Date & Time]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="5ff4cfe0-fda1-4910-9ad2-90dbae7666ef" mode="Opaque" x="73" y="0" width="107" height="27" forecolor="#006699" backcolor="#E6E6E6"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{grnote_datetime}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="41a1bd9d-d0f2-41d1-9cab-eaed24d33395" mode="Opaque" x="300" y="0" width="63" height="27" forecolor="#666666" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Left" verticalAlignment="Bottom">
+						<font size="12" isBold="false"/>
+					</textElement>
+					<text><![CDATA[POrder No.]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="883f26bf-b493-4481-8ad0-a1b338f1d138" mode="Opaque" x="363" y="0" width="67" height="27" forecolor="#006699" backcolor="#E6E6E6"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{porder_no}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="623554d3-7e7b-40e4-a926-5e9c41f8303e" mode="Opaque" x="430" y="0" width="67" height="27" forecolor="#666666" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Left" verticalAlignment="Bottom">
+						<font size="12" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Gross Total]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(-#,##0.00)" isBlankWhenNull="true">
+					<reportElement uuid="c9662695-e4b6-4df5-8039-175a3f599f94" mode="Opaque" x="497" y="0" width="68" height="27" forecolor="#006699" backcolor="#E6E6E6"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{grnote_grossamount}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="118777ea-0442-48f4-9745-3a761e039b84" mode="Opaque" x="565" y="0" width="54" height="27" forecolor="#666666" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Left" verticalAlignment="Bottom">
+						<font size="12" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Discount]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(-#,##0.00)" isBlankWhenNull="true">
+					<reportElement uuid="3eeb5c50-c8da-4ceb-bd49-a715f19f659e" mode="Opaque" x="619" y="0" width="60" height="27" forecolor="#006699" backcolor="#E6E6E6"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{grnote_totaldiscountvalue}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="e9c13e7a-239e-4fd6-abd1-f2d2343cb15a" mode="Opaque" x="679" y="0" width="52" height="27" forecolor="#666666" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Left" verticalAlignment="Bottom">
+						<font size="12" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Net Total]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(-#,##0.00)" isBlankWhenNull="true">
+					<reportElement uuid="706240e6-304d-4714-93f7-06adc5a65a21" mode="Opaque" x="731" y="0" width="71" height="27" forecolor="#006699" backcolor="#E6E6E6"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{grnote_netamount}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="64eb0372-7c86-493b-acda-f411434b7e79" mode="Transparent" x="0" y="27" width="122" height="23" forecolor="#000000" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Left" verticalAlignment="Bottom">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Item/s]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="66b671a6-947e-40c2-bf6b-998cdd64f104" mode="Transparent" x="122" y="27" width="78" height="23" forecolor="#000000" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Left" verticalAlignment="Bottom">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Qty Recived]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="bce808e9-44c9-476b-ac71-75ebcd80a033" mode="Transparent" x="200" y="27" width="94" height="23" forecolor="#000000" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Left" verticalAlignment="Bottom">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[perchase Pice]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="79314751-c780-48b9-9291-feb92ef3042d" mode="Transparent" x="294" y="27" width="81" height="23" forecolor="#000000" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Left" verticalAlignment="Bottom">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Salling Price]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="a4ba320b-c996-479c-a687-e99433a04752" mode="Transparent" x="375" y="27" width="64" height="23" forecolor="#000000" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Left" verticalAlignment="Bottom">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Line Total]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="32"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement uuid="8fb19dfd-7da7-4bde-9cae-a45e0a6e80cb" mode="Opaque" x="-20" y="-20" width="842" height="92" backcolor="#006699"/>
+				<staticText>
+					<reportElement uuid="9efab316-22b3-4e2b-9f0e-23f47b92c8b1" x="49" y="27" width="234" height="43" forecolor="#FFFFFF"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Mobile Tec]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="8b2f896e-b2eb-48dd-8a82-d94443c9a2b2" x="575" y="43" width="247" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Good Recive Note Details By Date]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="9efab316-22b3-4e2b-9f0e-23f47b92c8b1" x="21" y="10" width="24" height="82" forecolor="#FFFFFF"/>
+					<textElement>
+						<font fontName="Brush Script MT" size="60" isBold="true"/>
+					</textElement>
+					<text><![CDATA[i]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="6"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="6">
+			<line>
+				<reportElement uuid="30829fff-c749-480d-a760-f1c48290819f" x="-20" y="3" width="842" height="1" forecolor="#666666"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement uuid="dccc96e4-adce-4024-91dc-26ed4c483c92" positionType="FixRelativeToBottom" x="0" y="19" width="802" height="1"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="0b1d50d9-53c4-432f-b6f8-fb551536219b" x="0" y="0" width="122" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="7b1fa388-1b37-463b-b56b-66e673f32e9a" x="122" y="0" width="73" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{grnotepoitem_qtyrecieved}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;(-#,##0.00)" isBlankWhenNull="true">
+				<reportElement uuid="864d9dfe-0dab-492c-86e4-f075836fd2e4" x="200" y="0" width="82" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{grnotepoitem_pprice}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;(-#,##0.00)" isBlankWhenNull="true">
+				<reportElement uuid="c63a9974-395e-40ea-a557-935a492619ff" x="294" y="0" width="69" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{grnotepoitem_sprice}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;(-#,##0.00)" isBlankWhenNull="true">
+				<reportElement uuid="2850ebb5-c740-42b4-9506-8aa2076c7cd1" x="375" y="0" width="64" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{grnotepoitem_linetotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement uuid="c575a8c9-a230-4cc8-adbb-19311f46ff28" mode="Opaque" x="0" y="4" width="762" height="13" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="e81e4090-ed1f-4ac1-9d0a-753f630ff16b" mode="Opaque" x="762" y="4" width="40" height="13" backcolor="#E6E6E6"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="587f6b31-54d0-40d5-87aa-1164e7c42c05" x="0" y="4" width="100" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

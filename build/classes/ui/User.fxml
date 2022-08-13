@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1050.0" stylesheets="@../css/commonStyles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.UserController">
+   <center>
+      <AnchorPane prefHeight="620.0" prefWidth="1050.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane id="AnchorPane" prefHeight="620.0" prefWidth="1050.0">
+               <children>
+                  <ImageView fitHeight="620.0" fitWidth="1050.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/UserManBack.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnHomeAP" prefHeight="26.0" prefWidth="26.0" styleClass="homeButton">
+                     <tooltip>
+                        <Tooltip text="Click here for navigate to the Main Window" />
+                     </tooltip></Button>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b2c3d3" height="431.0" layoutX="525.0" layoutY="82.0" stroke="#b2c3d3" strokeType="INSIDE" width="486.0" />
+                  <Label layoutX="47.0" layoutY="93.0" text="MANAGE USER">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="536.0" layoutY="93.0" text="SEARCH USER">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="47.0" layoutY="120.0" text="Employee">
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic></Label>
+                  <Label layoutX="47.0" layoutY="157.0" text="Username">
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic></Label>
+                  <Label layoutX="47.0" layoutY="196.0" text="Password">
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic></Label>
+                  <Label layoutX="48.0" layoutY="233.0" text="Retype Password">
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic></Label>
+                  <Label layoutX="48.0" layoutY="271.0" text="Status">
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic></Label>
+                  <Label layoutX="51.0" layoutY="307.0" text="Role">
+                     <graphic>
+                        <Label styleClass="redStar" text="*" />
+                     </graphic></Label>
+                  <ComboBox fx:id="cmbEmployee" layoutX="160.0" layoutY="116.0" onAction="#cmbEmployeeAP" prefHeight="25.0" prefWidth="303.0" promptText="Select Employee" styleClass="combobox">
+                     <tooltip>
+                        <Tooltip text="In this field only show the emplyees name which still not assign a role." />
+                     </tooltip></ComboBox>
+                  <TextField fx:id="txtUsername" layoutX="160.0" layoutY="153.0" onKeyReleased="#txtUsernameKR" prefHeight="25.0" prefWidth="303.0" promptText="Type Usernamr Here" styleClass="combobox" />
+                  <PasswordField fx:id="pswPassword" layoutX="160.0" layoutY="192.0" onKeyReleased="#pswPasswordKR" prefHeight="25.0" prefWidth="303.0" promptText="Type Password Here" styleClass="combobox" />
+                  <PasswordField fx:id="pswRetypePassword" layoutX="160.0" layoutY="229.0" onKeyReleased="#pswRetypePasswordKR" prefHeight="25.0" prefWidth="303.0" promptText="RetypePassword Here" styleClass="combobox" />
+                  <ComboBox fx:id="cmbStatus" layoutX="160.0" layoutY="267.0" onAction="#cmbStatusAP" prefHeight="25.0" prefWidth="303.0" promptText="Select Userstatus" styleClass="combobox" />
+                  <ListView fx:id="lstLeft" layoutX="160.0" layoutY="306.0" prefHeight="156.0" prefWidth="107.0" styleClass="combobox">
+                     <tooltip>
+                        <Tooltip text="Select the role/s &amp; click &quot;&gt;&quot; button for add that role/s to the Selected Employee" />
+                     </tooltip></ListView>
+                  <ListView fx:id="lstRight" layoutX="349.0" layoutY="306.0" prefHeight="156.0" prefWidth="114.0" styleClass="combobox">
+                     <tooltip>
+                        <Tooltip text="These are the Roles assign to this Employee" />
+                     </tooltip></ListView>
+                  <Button fx:id="btnRightAll" layoutX="291.0" layoutY="316.0" mnemonicParsing="false" onAction="#btnRightAllAP" text="&gt;&gt;" />
+                  <Button fx:id="btnRight" layoutX="292.0" layoutY="355.0" mnemonicParsing="false" onAction="#btnRightAP" prefHeight="25.0" prefWidth="33.0" text="&gt;" />
+                  <Button fx:id="btnLeft" layoutX="292.0" layoutY="395.0" mnemonicParsing="false" onAction="#btnLeftAP" prefHeight="25.0" prefWidth="33.0" text="&lt;" />
+                  <Button fx:id="btnLeftAll" layoutX="291.0" layoutY="432.0" mnemonicParsing="false" onAction="#btnLeftAllAP" text="&lt;&lt;" />
+                  <Button fx:id="btnAdd" layoutX="397.0" layoutY="486.0" mnemonicParsing="false" onAction="#btnAddAP" prefHeight="25.0" prefWidth="66.0" text="ADD">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="btnClear" layoutX="318.0" layoutY="486.0" mnemonicParsing="false" onAction="#btnClearAP" prefHeight="25.0" prefWidth="66.0" text="CLEAR">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip text="Clear the fields" />
+                     </tooltip></Button>
+                  <Button fx:id="btnUpdate" layoutX="160.0" layoutY="486.0" mnemonicParsing="false" onAction="#btnUpdateAP" prefHeight="25.0" prefWidth="66.0" text="UPDATE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="btnDelete" layoutX="237.0" layoutY="486.0" mnemonicParsing="false" onAction="#btnDeleteAP" prefHeight="25.0" prefWidth="66.0" text="DELETE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Label layoutX="536.0" layoutY="119.0" text="Employee Name" />
+                  <Label layoutX="537.0" layoutY="157.0" text="Role" />
+                  <TextField fx:id="txtSearchEmpName" layoutX="639.0" layoutY="115.0" onKeyReleased="#txtSearchEmpNameKR" prefHeight="25.0" prefWidth="260.0" promptText="Type Employee Name" styleClass="combobox" />
+                  <ComboBox fx:id="cmbSearchRole" layoutX="639.0" layoutY="152.0" onAction="#cmbSearchRoleAP" prefHeight="25.0" prefWidth="260.0" promptText="Select Role" styleClass="combobox" />
+                  <Button fx:id="btnSearchClear" layoutX="910.0" layoutY="156.0" mnemonicParsing="false" onAction="#btnSearchClearAP" prefHeight="25.0" prefWidth="90.0" text="Clear Search" />
+                  <Pagination fx:id="pagination" layoutX="537.0" layoutY="201.0" maxPageIndicatorCount="5" prefHeight="302.0" prefWidth="465.0" />
+                  <TableView fx:id="tblUser" layoutX="536.0" layoutY="192.0" onKeyReleased="#tblUserKR" onMouseClicked="#tblUserMC" prefHeight="262.0" prefWidth="465.0">
+                     <columns>
+                        <TableColumn fx:id="colUsername" prefWidth="155.0" text="Username" />
+                        <TableColumn fx:id="colEmployee" prefWidth="155.0" text="Employee" />
+                        <TableColumn fx:id="colStatus" prefWidth="155.0" text="Status" />
+                     </columns>
+                     <tooltip>
+                        <Tooltip text="Select the Employee for DELETE or UPDATE the details" />
+                     </tooltip>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
